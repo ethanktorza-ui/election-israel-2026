@@ -59,13 +59,23 @@ button{font-family:inherit;color:inherit}
 .entete nav a{
   font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;
   text-transform:uppercase;color:var(--gris);text-decoration:none;
+  padding-bottom:3px;border-bottom:2px solid transparent;
 }
 .entete nav a:hover{color:var(--encre)}
+.entete nav a.actif{color:var(--encre);border-bottom-color:var(--claret)}
 .compteur{
   font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.11em;
   text-transform:uppercase;color:var(--claret);white-space:nowrap;
 }
-@media (max-width:860px){.entete nav{display:none}}
+@media (max-width:860px){
+  .entete-in{flex-wrap:wrap;row-gap:10px}
+  .entete nav{
+    width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;gap:20px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:1px;
+  }
+  .entete nav::-webkit-scrollbar{display:none}
+  .entete nav a{white-space:nowrap}
+}
 
 /* ─────────────────────────────────────────────────────────
    Une
@@ -120,8 +130,10 @@ button{font-family:inherit;color:inherit}
 /* ─────────────────────────────────────────────────────────
    Sections
    ───────────────────────────────────────────────────────── */
-section{padding:82px 0;border-top:1px solid var(--filet)}
+section{padding:82px 0;border-top:1px solid var(--filet);scroll-margin-top:68px}
 section.creux{background:var(--papier-creux)}
+section.panneau{display:none}
+section.panneau.actif{display:block}
 .sec-tete{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:52px;max-width:var(--texte)}
 .sec-tete .label{display:block;margin-bottom:18px}
 .sec-tete h2{font-family:'Instrument Serif',serif;font-size:clamp(33px,4.6vw,52px);letter-spacing:-.022em}
@@ -320,7 +332,7 @@ footer li{margin-bottom:7px}
 </header>
 
 <!-- ══════════ SYSTÈME ══════════ -->
-<section id="systeme">
+<section id="systeme" class="panneau actif">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Chapitre premier</span>
@@ -381,7 +393,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ PARTIS ══════════ -->
-<section id="partis" class="creux">
+<section id="partis" class="creux panneau">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Chapitre deux</span>
@@ -401,7 +413,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ QUESTIONNAIRE ══════════ -->
-<section id="questionnaire">
+<section id="questionnaire" class="panneau">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Chapitre trois</span>
@@ -418,7 +430,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ EMPLOIS ══════════ -->
-<section id="emplois" class="creux">
+<section id="emplois" class="creux panneau">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Chapitre quatre</span>
@@ -523,7 +535,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ VOTER ══════════ -->
-<section id="voter">
+<section id="voter" class="panneau">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Chapitre cinq</span>
@@ -754,6 +766,33 @@ const QUESTIONS=[
   pos:{likoud:-1,otzma:0,tsionout:-1,shas:1,yahadout:1,beyahad:0,yashar:0,beitenou:-1,democrates:2,hadash:2,raam:1,bayit:0}}
 ];
 
+/* ── onglets : un chapitre visible à la fois ──────────── */
+const ONGLETS=["systeme","partis","questionnaire","emplois","voter"];
+const navLiens=document.querySelectorAll(".entete nav a");
+function activerOnglet(id, deplacer){
+  if(!ONGLETS.includes(id)) id=ONGLETS[0];
+  ONGLETS.forEach(o=>{
+    const sec=document.getElementById(o);
+    if(sec) sec.classList.toggle("actif", o===id);
+  });
+  navLiens.forEach(a=>{
+    const cible=a.getAttribute("href").slice(1);
+    a.classList.toggle("actif", cible===id);
+  });
+  if(location.hash!=="#"+id){
+    try{ history.replaceState(null,"","#"+id); }catch(err){ /* aperçu en bac à sable : hash non modifiable, sans gravité */ }
+  }
+  if(deplacer){
+    const sec=document.getElementById(id);
+    if(sec) sec.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+}
+navLiens.forEach(a=>a.addEventListener("click",e=>{
+  const cible=a.getAttribute("href").slice(1);
+  if(ONGLETS.includes(cible)){ e.preventDefault(); activerOnglet(cible, true); }
+}));
+activerOnglet(location.hash.slice(1), false);
+
 /* ── compte à rebours ─────────────────────────────────── */
 (function(){
   const j=new Date("2026-10-27T07:00:00+03:00"), el=document.getElementById("compteur");
@@ -787,7 +826,7 @@ const ARC=PARTIS.filter(p=>p.bloc!=="seuil");
     document.querySelectorAll(".bloc-b").forEach(x=>x.setAttribute("aria-pressed", x.dataset.bloc===actif));
     barre.querySelectorAll(".seg").forEach(s=>s.classList.toggle("pale", actif!==null && s.dataset.bloc!==actif));
   }));
-  barre.addEventListener("click",e=>{const s=e.target.closest(".seg"); if(s) deplier(s.dataset.p);});
+  barre.addEventListener("click",e=>{const s=e.target.closest(".seg"); if(s){activerOnglet("partis", false); deplier(s.dataset.p);}});
 })();
 
 /* ── liste des partis ─────────────────────────────────── */
