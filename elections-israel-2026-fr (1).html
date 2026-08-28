@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le scrutin du 27 octobre — Guide des élections israéliennes</title>
+<meta name="description" content="Guide francophone des élections à la Knesset du 27 octobre 2026 : le système, les partis, un questionnaire de proximité et les emplois du jour du scrutin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────────────────
+   Palette sourde, papier de presse
+   ───────────────────────────────────────────────────────── */
+:root{
+  --papier:#fbf9f5;
+  --papier-creux:#f4f1ea;
+  --encre:#14110f;
+  --gris:#6e6a64;
+  --gris-clair:#9a958d;
+  --filet:#ded8ce;
+  --filet-fort:#c3bbae;
+  --claret:#8e2c3b;
+  --marine:#1f3a5f;
+  --colonne:1240px;
+  --texte:720px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.001ms!important;animation:none!important}}
+body{
+  margin:0;background:var(--papier);color:var(--encre);
+  font-family:'Newsreader',Georgia,serif;font-size:18px;line-height:1.66;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.012em;line-height:1.12}
+p{margin:0 0 1.05em}
+a{color:var(--claret);text-underline-offset:3px}
+.wrap{max-width:var(--colonne);margin:0 auto;padding:0 32px}
+.texte{max-width:var(--texte)}
+:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+button{font-family:inherit;color:inherit}
+
+/* étiquette petites capitales */
+.label{
+  font-family:'Instrument Sans',system-ui,sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--claret);
+}
+.label.gris{color:var(--gris-clair)}
+.chiffre{font-family:'Instrument Sans',system-ui,sans-serif;font-variant-numeric:tabular-nums}
+
+/* ─────────────────────────────────────────────────────────
+   Bandeau supérieur
+   ───────────────────────────────────────────────────────── */
+.entete{border-bottom:1px solid var(--filet);background:var(--papier);position:sticky;top:0;z-index:50}
+.entete-in{max-width:var(--colonne);margin:0 auto;padding:11px 32px;display:flex;align-items:center;gap:28px}
+.entete-titre{font-family:'Instrument Serif',Georgia,serif;font-size:19px;letter-spacing:-.01em;white-space:nowrap}
+.entete nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.entete nav a{
+  font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gris);text-decoration:none;
+}
+.entete nav a:hover{color:var(--encre)}
+.compteur{
+  font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--claret);white-space:nowrap;
+}
+@media (max-width:860px){.entete nav{display:none}}
+
+/* ─────────────────────────────────────────────────────────
+   Une
+   ───────────────────────────────────────────────────────── */
+.une{padding:74px 0 0;text-align:center;border-bottom:1px solid var(--filet)}
+.une .kicker{margin-bottom:26px}
+.une h1{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(46px,7.6vw,94px);line-height:1.03;letter-spacing:-.028em;
+  max-width:15ch;margin:0 auto;
+}
+.une h1 em{font-style:italic;color:var(--claret)}
+.une .chapeau{
+  max-width:63ch;margin:30px auto 0;font-size:21px;line-height:1.58;color:#312d29;font-weight:300;
+}
+.une .signature{
+  margin:30px auto 0;font-family:'Instrument Sans',sans-serif;font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--gris-clair);
+}
+.une .filet-double{margin:44px auto 0;max-width:var(--colonne);border-top:3px double var(--filet-fort);height:0}
+
+/* graphique de sièges */
+.sieges{padding:46px 0 66px}
+.sieges-tete{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.sieges-tete h2{font-size:22px;font-weight:500}
+.sieges-tete p{margin:0;font-size:14.5px;color:var(--gris);max-width:46ch;text-align:left}
+.barre{display:flex;height:46px;width:100%;position:relative;border:1px solid var(--encre)}
+.seg{position:relative;transition:opacity .25s}
+.seg+.seg{border-left:1px solid rgba(251,249,245,.55)}
+.seg.pale{opacity:.2}
+.marque61{position:absolute;top:-16px;bottom:-30px;width:1px;background:var(--encre);z-index:3}
+.marque61::after{
+  content:"61 sièges — majorité";position:absolute;top:-19px;left:8px;white-space:nowrap;
+  font-family:'Instrument Sans',sans-serif;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+}
+.echelle{display:flex;justify-content:space-between;margin-top:38px;font-family:'Instrument Sans',sans-serif;font-size:11px;color:var(--gris-clair);letter-spacing:.06em}
+.blocs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;margin-top:30px;border-top:1px solid var(--filet)}
+.bloc-b{
+  padding:18px 22px 18px 0;text-align:left;background:none;border:0;border-right:1px solid var(--filet);
+  cursor:pointer;transition:background .2s;
+}
+.bloc-b:last-child{border-right:0}
+.bloc-b:hover,.bloc-b[aria-pressed="true"]{background:var(--papier-creux)}
+.bloc-b .n{font-family:'Instrument Serif',serif;font-size:38px;line-height:1;display:block}
+.bloc-b .t{display:block;margin-top:6px;font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--gris)}
+.bloc-b .d{display:block;margin-top:7px;font-size:14.5px;color:var(--gris);line-height:1.45}
+@media (max-width:760px){
+  .bloc-b{border-right:0;border-bottom:1px solid var(--filet);padding:16px 0}
+  .blocs{grid-template-columns:1fr}
+}
+
+/* ─────────────────────────────────────────────────────────
+   Sections
+   ───────────────────────────────────────────────────────── */
+section{padding:82px 0;border-top:1px solid var(--filet)}
+section.creux{background:var(--papier-creux)}
+.sec-tete{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-bottom:52px;max-width:var(--texte)}
+.sec-tete .label{display:block;margin-bottom:18px}
+.sec-tete h2{font-family:'Instrument Serif',serif;font-size:clamp(33px,4.6vw,52px);letter-spacing:-.022em}
+.sec-tete p{margin:20px 0 0;font-size:19px;color:#3a3631;font-weight:300}
+
+/* règles du système — colonnes de journal */
+.colonnes{columns:2;column-gap:56px;column-rule:1px solid var(--filet)}
+@media (max-width:840px){.colonnes{columns:1}}
+.regle{break-inside:avoid;margin-bottom:34px}
+.regle h3{font-size:21px;font-weight:600;margin-bottom:9px;display:flex;gap:12px;align-items:baseline}
+.regle h3 span{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;color:var(--claret);letter-spacing:.1em}
+.regle p{margin:0;font-size:17px;color:#3a3631}
+.exergue{
+  margin-top:14px;padding:30px 0 0;border-top:3px double var(--filet-fort);max-width:var(--texte);
+}
+.exergue h3{font-family:'Instrument Serif',serif;font-size:26px;margin-bottom:14px}
+.exergue p{font-size:18px;color:#3a3631}
+.exergue p:last-child{margin-bottom:0}
+
+/* ─────────────────────────────────────────────────────────
+   Partis — liste éditoriale dépliante
+   ───────────────────────────────────────────────────────── */
+.filtres{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:8px;padding-bottom:16px;border-bottom:1px solid var(--filet)}
+.filtre{
+  background:none;border:0;padding:4px 0;cursor:pointer;
+  font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--gris);border-bottom:2px solid transparent;
+}
+.filtre:hover{color:var(--encre)}
+.filtre[aria-pressed="true"]{color:var(--encre);border-bottom-color:var(--claret)}
+.liste{border-bottom:1px solid var(--filet)}
+.ligne{border-top:1px solid var(--filet)}
+.ligne:first-child{border-top:0}
+.ligne-tete{
+  width:100%;background:none;border:0;padding:24px 0;cursor:pointer;text-align:left;
+  display:grid;grid-template-columns:14px minmax(0,2.1fr) minmax(0,1.5fr) 150px 22px;
+  gap:22px;align-items:center;transition:opacity .2s;
+}
+.ligne-tete:hover{opacity:.62}
+.pastille{width:10px;height:10px;border-radius:50%}
+.ligne-nom{font-family:'Instrument Serif',serif;font-size:27px;letter-spacing:-.015em}
+.ligne-nom i{display:block;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--gris);margin-top:4px;letter-spacing:0}
+.ligne-etiq{font-size:15.5px;color:var(--gris);line-height:1.4}
+.ligne-mesure{display:flex;align-items:center;gap:11px;justify-content:flex-end}
+.mini{height:6px;flex:1;background:var(--filet);max-width:96px}
+.mini i{display:block;height:100%}
+.ligne-mesure b{font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:16px;min-width:22px;text-align:right;font-variant-numeric:tabular-nums}
+.chev{font-family:'Instrument Sans',sans-serif;color:var(--gris-clair);font-size:15px;transition:transform .25s;justify-self:end}
+.ligne[data-on="1"] .chev{transform:rotate(180deg)}
+.ligne-corps{display:none;padding:0 0 34px}
+.ligne[data-on="1"] .ligne-corps{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px}
+.ligne-corps p{font-size:17.5px;color:#3a3631}
+.ligne-corps .label{display:block;margin-bottom:12px}
+.ligne-corps ul{margin:0;padding-left:20px;font-size:16.5px;color:#3a3631}
+.ligne-corps li{margin-bottom:9px}
+.ligne-corps .pied{margin-top:16px;font-size:14.5px;color:var(--gris-clair);font-style:italic}
+@media (max-width:900px){
+  .ligne-tete{grid-template-columns:12px 1fr 84px;gap:14px}
+  .ligne-etiq,.chev{display:none}
+  .ligne-mesure .mini{display:none}
+  .ligne[data-on="1"] .ligne-corps{grid-template-columns:1fr;gap:26px}
+  .ligne-nom{font-size:23px}
+}
+
+/* ─────────────────────────────────────────────────────────
+   Questionnaire
+   ───────────────────────────────────────────────────────── */
+.quiz{max-width:760px;margin:0 auto;background:var(--papier);border:1px solid var(--filet-fort);padding:0}
+.progres{height:2px;background:var(--filet)}
+.progres i{display:block;height:100%;background:var(--claret);width:0;transition:width .35s ease}
+.quiz-in{padding:44px 48px 42px}
+.quiz-meta{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+.quiz-num{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gris-clair)}
+.quiz-q{font-family:'Instrument Serif',serif;font-size:clamp(25px,3.5vw,35px);line-height:1.16;letter-spacing:-.02em;margin:22px 0 30px}
+.reps{display:grid;gap:0;border-top:1px solid var(--filet)}
+.rep{
+  display:flex;align-items:center;gap:16px;background:none;border:0;border-bottom:1px solid var(--filet);
+  padding:15px 4px;cursor:pointer;font-size:18px;text-align:left;transition:padding-left .18s,background .18s;
+}
+.rep:hover{background:var(--papier-creux);padding-left:12px}
+.rep i{width:9px;height:9px;border-radius:50%;flex:none;border:1px solid var(--encre)}
+.rep[data-t="2"] i{background:var(--marine)}
+.rep[data-t="1"] i{background:#8fa3ba}
+.rep[data-t="0"] i{background:transparent}
+.rep[data-t="-1"] i{background:#cfa0a7}
+.rep[data-t="-2"] i{background:var(--claret)}
+.quiz-pied{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.poids{display:flex;align-items:center;gap:12px;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris-clair)}
+.poids button{background:none;border:0;padding:3px 0;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);border-bottom:1px solid transparent}
+.poids button[aria-pressed="true"]{color:var(--encre);border-bottom-color:var(--claret)}
+.txt-btn{background:none;border:0;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);padding:4px 0;margin-left:20px}
+.txt-btn:first-child{margin-left:0}
+.txt-btn:hover{color:var(--encre)}
+.res-liste{margin-top:4px;border-top:1px solid var(--filet)}
+.res{display:grid;grid-template-columns:12px 1fr 130px 62px;gap:16px;align-items:center;padding:15px 0;border-bottom:1px solid var(--filet)}
+.res.top{padding:22px 0}
+.res.top .res-nom{font-size:26px}
+.res-nom{font-family:'Instrument Serif',serif;font-size:20px;letter-spacing:-.012em}
+.res-nom i{display:block;font-family:'Newsreader',serif;font-style:italic;font-size:14.5px;color:var(--gris);margin-top:3px}
+.res-bar{height:6px;background:var(--filet)}
+.res-bar i{display:block;height:100%;width:0;transition:width .85s cubic-bezier(.2,.85,.25,1)}
+.res-pct{font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:17px;text-align:right;font-variant-numeric:tabular-nums}
+.res-notes{margin-top:32px;font-size:16.5px;color:#3a3631}
+.res-notes .label{display:block;margin:24px 0 10px}
+.res-notes ul{margin:0;padding-left:20px}
+.res-notes li{margin-bottom:7px}
+@media (max-width:620px){
+  .quiz-in{padding:30px 24px}
+  .res{grid-template-columns:10px 1fr 54px;gap:12px}
+  .res-bar{display:none}
+}
+
+/* ─────────────────────────────────────────────────────────
+   Emplois du jour du scrutin
+   ───────────────────────────────────────────────────────── */
+.tableau{width:100%;border-collapse:collapse;font-size:16.5px}
+.tableau thead th{
+  font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gris);text-align:left;padding:0 20px 12px 0;border-bottom:1px solid var(--encre);
+}
+.tableau tbody td{padding:22px 20px 22px 0;border-bottom:1px solid var(--filet);vertical-align:top;color:#3a3631}
+.tableau tbody tr:hover{background:rgba(0,0,0,.017)}
+.tableau .poste{font-family:'Instrument Serif',serif;font-size:22px;color:var(--encre);letter-spacing:-.012em;line-height:1.2}
+.tableau .poste small{display:block;font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--gris);margin-top:6px;line-height:1.5}
+.tableau .paye{font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:19px;color:var(--encre);white-space:nowrap;font-variant-numeric:tabular-nums}
+.tableau .paye small{display:block;font-family:'Instrument Sans',sans-serif;font-weight:400;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--gris-clair);margin-top:5px}
+.statut{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;display:inline-block;padding-left:14px;position:relative}
+.statut::before{content:"";position:absolute;left:0;top:.42em;width:7px;height:7px;border-radius:50%}
+.statut.ouvert{color:#3d6b4a}.statut.ouvert::before{background:#3d6b4a}
+.statut.clos{color:var(--claret)}.statut.clos::before{background:var(--claret)}
+.statut.parti{color:var(--marine)}.statut.parti::before{background:var(--marine)}
+@media (max-width:820px){
+  .tableau thead{display:none}
+  .tableau tbody td{display:block;padding:6px 0;border:0}
+  .tableau tbody tr{display:block;padding:24px 0;border-bottom:1px solid var(--filet)}
+  .tableau tbody td:first-child{padding-top:0}
+}
+.encadres{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:0;margin-top:52px;border-top:3px double var(--filet-fort)}
+.enc{padding:26px 28px 22px 0;border-right:1px solid var(--filet)}
+.enc:last-child{border-right:0}
+.enc h4{font-size:18px;font-weight:600;margin-bottom:9px}
+.enc p{margin:0;font-size:15.5px;color:var(--gris)}
+@media (max-width:760px){.enc{border-right:0;border-bottom:1px solid var(--filet);padding:22px 0}}
+
+/* ─────────────────────────────────────────────────────────
+   Pied
+   ───────────────────────────────────────────────────────── */
+footer{background:var(--encre);color:#b7b1a8;padding:66px 0 58px;font-size:15.5px;line-height:1.6}
+footer h3{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#e6e0d6;margin-bottom:14px}
+.pied{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:44px}
+footer ul{margin:0;padding-left:19px}
+footer li{margin-bottom:7px}
+.ours{margin-top:50px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.06em;color:#7d786f}
+</style>
+</head>
+<body>
+
+<div class="entete">
+  <div class="entete-in">
+    <div class="entete-titre">Le scrutin du 27 octobre</div>
+    <nav>
+      <a href="#systeme">Le système</a>
+      <a href="#partis">Les partis</a>
+      <a href="#questionnaire">Questionnaire</a>
+      <a href="#emplois">Travailler</a>
+      <a href="#voter">Voter</a>
+    </nav>
+    <div class="compteur" id="compteur"></div>
+  </div>
+</div>
+
+<!-- ══════════ UNE ══════════ -->
+<header class="une">
+  <div class="wrap">
+    <p class="label kicker">Élections à la Knesset · Guide francophone</p>
+    <h1>Cent vingt sièges, et <em>soixante et un</em> pour gouverner</h1>
+    <p class="chapeau">
+      En Israël, on ne vote pas pour un Premier ministre. On vote pour une liste, et le gouvernement se
+      fabrique ensuite, par négociation. Ce guide explique la mécanique du scrutin, ce que défend chaque
+      parti, et propose un questionnaire pour situer vos propres réponses.
+    </p>
+    <p class="signature">Mise à jour du 22 août 2026</p>
+  </div>
+  <div class="filet-double"></div>
+
+  <div class="wrap sieges">
+    <div class="sieges-tete">
+      <h2>L'état des sondages</h2>
+      <p>Moyenne indicative des enquêtes publiées à la mi-août. En Israël, l'écart entre les sondages et
+         les urnes reste considérable.</p>
+    </div>
+    <div class="barre" id="barre"></div>
+    <div class="echelle"><span>0</span><span>120 sièges</span></div>
+    <div class="blocs" id="blocs"></div>
+  </div>
+</header>
+
+<!-- ══════════ SYSTÈME ══════════ -->
+<section id="systeme">
+  <div class="wrap">
+    <div class="sec-tete">
+      <span class="label">Chapitre premier</span>
+      <h2>Comment fonctionne la politique israélienne</h2>
+      <p>Sept règles suffisent à comprendre presque tout ce qui se jouera entre le soir du scrutin et la
+         formation d'un gouvernement.</p>
+    </div>
+
+    <div class="colonnes">
+      <div class="regle"><h3><span>I</span>Une seule circonscription</h3>
+        <p>Tout le pays vote sur le même bulletin. Ni député local, ni région : les cent vingt membres de
+           la Knesset représentent Israël dans son ensemble. Un électeur de Kiryat Shmona et un électeur
+           d'Eilat ont exactement le même choix.</p></div>
+
+      <div class="regle"><h3><span>II</span>On vote pour une liste, pas pour une personne</h3>
+        <p>Chaque parti dépose une liste ordonnée de candidats. Un parti qui obtient un cinquième des voix
+           obtient vingt-quatre sièges, attribués aux vingt-quatre premiers noms. L'ordre de cette liste
+           pèse souvent plus lourd que la campagne elle-même.</p></div>
+
+      <div class="regle"><h3><span>III</span>Le seuil de 3,25 %</h3>
+        <p>En dessous de 3,25 % des voix, soit environ quatre sièges, un parti n'entre pas et ses voix sont
+           perdues, sans être reportées sur ses alliés. C'est ce qui pousse les petites listes à fusionner
+           en catastrophe, et ce qui a fait basculer des élections entières.</p></div>
+
+      <div class="regle"><h3><span>IV</span>Les accords de report de voix</h3>
+        <p>Deux listes peuvent signer un accord dit « de restes » : pour l'attribution des derniers sièges,
+           elles sont comptées ensemble. Cela ne sauve pas un parti resté sous le seuil, mais permet à un
+           bloc de gagner un siège supplémentaire.</p></div>
+
+      <div class="regle"><h3><span>V</span>Le président distribue le mandat</h3>
+        <p>Après le scrutin, le président — dont la fonction est honorifique le reste du temps — consulte
+           chaque parti, puis confie à celui qui réunit le plus de soutiens vingt-huit jours, prolongeables
+           de quatorze, pour former une coalition. Ce n'est pas nécessairement le chef du premier parti.</p></div>
+
+      <div class="regle"><h3><span>VI</span>Tout se joue dans la coalition</h3>
+        <p>Aucun parti n'a jamais obtenu soixante et un sièges seul. Le futur Premier ministre doit donc
+           acheter le soutien des autres avec des ministères, des présidences de commissions et des
+           engagements budgétaires. Les véritables arbitrages du mandat se décident là.</p></div>
+
+      <div class="regle"><h3><span>VII</span>Un gouvernement peut tomber à tout moment</h3>
+        <p>Budget non voté, loi de dissolution, motion de défiance constructive : trois portes de sortie.
+           La Knesset sortante est la première depuis 1988 à être allée au terme de ses quatre années.
+           C'est l'exception, non la règle.</p></div>
+    </div>
+
+    <div class="exergue">
+      <h3>La conséquence pratique</h3>
+      <p>Un bulletin ne choisit pas un gouvernement : il choisit un rapport de force. Un même parti peut,
+         selon l'arithmétique du soir, finir au gouvernement ou dans l'opposition sans qu'un seul électeur
+         ait changé d'avis. La question « avec qui ce parti accepte-t-il de siéger ? » compte donc souvent
+         autant que son programme.</p>
+      <p>Deux lignes de fracture structurent le scrutin de 2026. La conscription des harédim, d'abord, qui
+         a fait exploser la majorité sortante. La possibilité, ensuite, que les partis arabes deviennent
+         partenaires d'un gouvernement : la plupart des partis sionistes l'excluent, ce qui prive
+         mécaniquement l'opposition d'une majorité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PARTIS ══════════ -->
+<section id="partis" class="creux">
+  <div class="wrap">
+    <div class="sec-tete">
+      <span class="label">Chapitre deux</span>
+      <h2>Qui se présente, et pour défendre quoi</h2>
+      <p>Onze listes ont aujourd'hui une chance sérieuse d'entrer à la Knesset, auxquelles s'ajoutent
+         quelques formations qui jouent leur survie autour du seuil.</p>
+    </div>
+    <div class="filtres" id="filtres">
+      <button class="filtre" data-f="tout" aria-pressed="true">Toutes</button>
+      <button class="filtre" data-f="droite" aria-pressed="false">Bloc Netanyahou</button>
+      <button class="filtre" data-f="opposition" aria-pressed="false">Opposition sioniste</button>
+      <button class="filtre" data-f="arabe" aria-pressed="false">Partis arabes</button>
+      <button class="filtre" data-f="seuil" aria-pressed="false">Autour du seuil</button>
+    </div>
+    <div class="liste" id="liste"></div>
+  </div>
+</section>
+
+<!-- ══════════ QUESTIONNAIRE ══════════ -->
+<section id="questionnaire">
+  <div class="wrap">
+    <div class="sec-tete">
+      <span class="label">Chapitre trois</span>
+      <h2>De quelles idées êtes-vous le plus proche</h2>
+      <p>Vingt-deux questions sur les sujets qui divisent réellement les partis. Signalez celles qui
+         comptent davantage pour vous. Rien n'est transmis nulle part : le calcul se fait dans votre
+         navigateur.</p>
+    </div>
+    <div class="quiz">
+      <div class="progres"><i id="progres"></i></div>
+      <div class="quiz-in" id="quizIn"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EMPLOIS ══════════ -->
+<section id="emplois" class="creux">
+  <div class="wrap">
+    <div class="sec-tete">
+      <span class="label">Chapitre quatre</span>
+      <h2>Travailler le jour du scrutin</h2>
+      <p>La Commission électorale centrale recrute près de cent mille personnes pour une seule journée.
+         Ces rémunérations relèvent d'un régime fiscal particulier, au taux de 18 %. Certains postes
+         passent par la Commission, d'autres uniquement par les partis.</p>
+    </div>
+
+    <table class="tableau">
+      <thead>
+        <tr><th style="width:31%">Poste</th><th style="width:15%">Rémunération</th><th style="width:32%">Conditions et sélection</th><th style="width:22%">Candidature</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="poste">Secrétaire de bureau de vote
+            <small>Représentant professionnel de la Commission dans le bureau : ouverture et fermeture de
+            l'urne, identification des électeurs, procès-verbal, arbitrage des litiges administratifs,
+            transmission des résultats.</small></div></td>
+          <td class="paye">3 000 ₪<small>brut, la journée</small></td>
+          <td>Vingt et un ans minimum, aucune activité partisane depuis trois ans, douze années de
+              scolarité. Module en ligne, test de présélection, entretien régional, formation de quatre
+              heures, examen final. Près de 195 000 candidatures pour environ 35 000 postes.</td>
+          <td><span class="statut clos">Clos le 14 août</span></td>
+        </tr>
+        <tr>
+          <td><div class="poste">Superviseur d'intégrité du scrutin
+            <small>Présent toute la journée, dépouillement compris, il documente et signale les
+            irrégularités. Porteur d'une caméra-piéton, il est la seule personne autorisée à filmer dans
+            l'enceinte du bureau.</small></div></td>
+          <td class="paye">≈ 2 260 ₪<small>brut, la journée</small></td>
+          <td>Vingt et un ans minimum, aucune appartenance ni activité partisane depuis trois ans, douze
+              années de scolarité, hébreu parfaitement maîtrisé à l'oral. Même parcours de sélection que
+              les secrétaires. Environ 14 000 personnes retenues.</td>
+          <td><span class="statut ouvert">Du 19 au 27 août</span></td>
+        </tr>
+        <tr>
+          <td><div class="poste">Placier
+            <small>Gestion des files, orientation des électeurs, ordre aux abords du bureau. Aucun pouvoir
+            de police, mais la charge d'empêcher les bousculades et la propagande dans le périmètre.</small></div></td>
+          <td class="paye">≈ 1 300 ₪<small>brut, la journée</small></td>
+          <td>Dix-huit ans minimum, sans sélection préalable. Journée longue, en général de 6 h 30 à
+              22 h 30.</td>
+          <td><span class="statut ouvert">Par téléphone, *0200</span></td>
+        </tr>
+        <tr>
+          <td><div class="poste">Régisseur de site
+            <small>Responsable du bâtiment abritant les bureaux : ouverture des locaux, électricité,
+            éclairage, accessibilité, installation des tables et des isoloirs, fermeture en fin de
+            journée.</small></div></td>
+          <td class="paye">1 300 ₪<small>brut, la journée</small></td>
+          <td>Présence requise avant l'arrivée des secrétaires et jusqu'à l'évacuation complète du
+              matériel.</td>
+          <td><span class="statut ouvert">Par téléphone, *0200</span></td>
+        </tr>
+        <tr>
+          <td><div class="poste">Membre de la commission de bureau
+            <small>Siège aux côtés du secrétaire pendant le vote et le dépouillement, et y représente sa
+            formation politique.</small></div></td>
+          <td class="paye">≈ 1 500 ₪<small>brut, la journée</small></td>
+          <td>Dix-huit ans minimum. Ce sont les partis, et non la Commission, qui désignent ces membres.
+              Les affectations se décident le plus souvent dans les deux ou trois dernières semaines.</td>
+          <td><span class="statut parti">Auprès d'un parti</span></td>
+        </tr>
+        <tr>
+          <td><div class="poste">Observateur
+            <small>Présence dans un bureau de vote pour observer le déroulement du scrutin, généralement
+            sur une demi-journée. La porte d'entrée la plus simple.</small></div></td>
+          <td class="paye">≈ 500 ₪<small>brut, la demi-journée</small></td>
+          <td>Dix-huit ans minimum, sans qualification particulière.</td>
+          <td><span class="statut parti">Auprès d'un parti</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="exergue" style="margin-top:44px">
+      <h3>Les autres recrutements</h3>
+      <p>La Commission publie également des appels à candidature pour des postes plus qualifiés et de plus
+         longue durée : formateurs chargés d'instruire les secrétaires, assistants juridiques rattachés au
+         conseiller juridique de la Commission — recherchés notamment parmi les étudiants en droit —,
+         personnel administratif, logistique et technique. Ces offres passent par le portail gouvernemental
+         et, pour certaines, par le service public de l'emploi. On ne peut déposer sa candidature que pour
+         un seul poste à la fois : un candidat déjà engagé dans la sélection des secrétaires ne peut
+         postuler ailleurs en parallèle.</p>
+    </div>
+
+    <div class="encadres">
+      <div class="enc"><h4>Le jour est chômé</h4>
+        <p>Les salariés ont droit à une journée de repos payée, sans décompte sur leurs congés, à condition
+           d'avoir travaillé chez le même employeur au moins quatorze jours consécutifs.</p></div>
+      <div class="enc"><h4>Sauf services essentiels</h4>
+        <p>Transports, hôtellerie, restauration, santé et sécurité fonctionnent normalement. L'employeur
+           doit dans tous les cas laisser à chacun la possibilité réelle d'aller voter.</p></div>
+      <div class="enc"><h4>Si vous travaillez</h4>
+        <p>Aucune loi ne fixe de taux unique. L'usage établi par la jurisprudence et les conventions est de
+           payer 200 %, ou 100 % assortis d'heures de repos compensatoires.</p></div>
+      <div class="enc"><h4>Renseignements</h4>
+        <p>Centre d'appel de la Commission électorale centrale : *0200 ou 074-7655565. Les postes attribués
+           par les partis se demandent directement auprès de leurs permanences.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ VOTER ══════════ -->
+<section id="voter">
+  <div class="wrap">
+    <div class="sec-tete">
+      <span class="label">Chapitre cinq</span>
+      <h2>Voter le 27 octobre</h2>
+    </div>
+    <div class="colonnes">
+      <div class="regle"><h3><span>·</span>Qui vote</h3>
+        <p>Les citoyens israéliens âgés de dix-huit ans révolus. Aucune inscription préalable : la liste
+           électorale est générée à partir du registre de population, et le bureau de vote est attribué
+           selon l'adresse déclarée.</p></div>
+      <div class="regle"><h3><span>·</span>Presque personne ne vote de l'étranger</h3>
+        <p>Israël n'organise pas le vote des citoyens résidant hors du pays. Seules exceptions : les
+           diplomates en poste, certains émissaires officiels et les marins. Un Israélien vivant à Paris ou
+           à Montréal doit être physiquement en Israël pour voter.</p></div>
+      <div class="regle"><h3><span>·</span>Le geste</h3>
+        <p>On présente une pièce d'identité, on passe derrière le paravent, on glisse dans une enveloppe le
+           petit bulletin portant les lettres de la liste choisie, et on la dépose dans l'urne. Les lettres
+           attribuées à chaque liste sont publiées après le 9 septembre.</p></div>
+      <div class="regle"><h3><span>·</span>Le jour même</h3>
+        <p>Journée chômée, transports gratuits pour rejoindre son bureau. Les horaires exacts et la
+           localisation des bureaux sont publiés par la Commission électorale centrale dans les semaines
+           précédant le scrutin.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="pied">
+      <div>
+        <h3>Ce que ce guide est</h3>
+        <p>Un travail indépendant, sans affiliation partisane. Les positions attribuées aux partis sont des
+           synthèses de leurs programmes, de leurs déclarations publiques et de leurs votes à la Knesset.
+           Ce ne sont pas des citations officielles, et un parti peut nuancer ou changer de position.</p>
+      </div>
+      <div>
+        <h3>Ce qu'il n'est pas</h3>
+        <p>Ni un outil de prédiction, ni une recommandation de vote. Le pourcentage de correspondance
+           mesure une proximité sur vingt-deux sujets ; il ignore volontairement la confiance accordée à un
+           dirigeant, la compétence supposée et le calcul stratégique, qui pèsent souvent autant.</p>
+      </div>
+      <div>
+        <h3>À revérifier</h3>
+        <ul>
+          <li>Les listes ne seront définitives qu'au 9 septembre : fusions et retraits restent possibles.</li>
+          <li>Les lettres de bulletin sont attribuées après cette date.</li>
+          <li>Salaires et calendriers de recrutement : à confirmer auprès de la Commission électorale centrale.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ours">Sondages : moyenne des enquêtes publiées à la mi-août 2026 · Guide francophone indépendant</div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   Données. Tout le texte traduisible est ici et dans le HTML :
+   pour une version anglaise ou russe, traduire PARTIS et
+   QUESTIONS sans toucher à la mécanique.
+   ═══════════════════════════════════════════════════════════ */
+const PARTIS=[
+ {id:"likoud",nom:"Likoud",tr:"HaLikoud",chef:"Benjamin Netanyahou",bloc:"droite",couleur:"#1f3a5f",sieges:36,sondage:23,
+  etiq:"Droite nationaliste · au gouvernement depuis 2022",
+  resume:"Le parti dominant de la droite israélienne depuis les années soixante-dix et le pivot de la coalition sortante. Le scrutin est largement un référendum sur son chef, au pouvoir presque sans interruption depuis 2009.",
+  points:["Sécurité d'abord : fermeté face au Hamas, au Hezbollah et à l'Iran, refus d'un État palestinien.",
+    "A porté la réforme judiciaire de 2023 visant à réduire le pouvoir de la Cour suprême ; le dossier reste ouvert.",
+    "Refuse une commission d'enquête d'État indépendante sur le 7 octobre, au profit d'une commission désignée par le politique.",
+    "Soutien aux implantations en Cisjordanie et opposition à tout démantèlement.",
+    "A absorbé le parti Nouvel Espoir de Gideon Saar avant le scrutin.",
+    "Fragilisé par l'échec sécuritaire du 7 octobre et par l'incapacité à trancher la conscription des harédim."]},
+
+ {id:"yashar",nom:"Yashar",tr:"« droit », « intègre »",chef:"Gadi Eisenkot",bloc:"opposition",couleur:"#8e2c3b",sieges:0,sondage:23,
+  etiq:"Centre · profil sécuritaire · parti neuf",
+  resume:"Fondé en septembre 2025 par l'ancien chef d'état-major de Tsahal, après sa rupture avec Benny Gantz. Devenu en quelques mois le principal rival de Netanyahou dans les sondages.",
+  points:["Commission d'enquête d'État sur le 7 octobre : exigence centrale de la campagne.",
+    "Conscription quasi universelle, avec une exemption limitée à environ 3 % des étudiants de yeshiva.",
+    "Favorable à l'adoption d'une constitution écrite.",
+    "Plan d'aliya ambitieux : deux millions de nouveaux immigrants d'ici 2048.",
+    "A siégé au cabinet de guerre puis démissionné en juin 2024, faute de stratégie de sortie.",
+    "A refusé de fusionner avec Bennett, se disant peu disposé à être numéro deux."]},
+
+ {id:"beyahad",nom:"Beyahad, Ensemble",tr:"alliance Bennett – Lapid",chef:"Naftali Bennett, avec Yaïr Lapid",bloc:"opposition",couleur:"#4e7c8a",sieges:24,sondage:13,
+  etiq:"Centre · fusion d'avril 2026",
+  resume:"Fusion annoncée en avril 2026 entre le nouveau parti de Naftali Bennett et Yesh Atid de Yaïr Lapid, sous la direction de Bennett. Les deux hommes avaient déjà gouverné ensemble en 2021 et 2022.",
+  points:["Limitation dans le temps du mandat de Premier ministre : mesure emblématique de Bennett.",
+    "Constitution écrite, en réponse aux crises institutionnelles de 2023 et 2025.",
+    "Partage égal du fardeau militaire, donc conscription des harédim.",
+    "Libéralisme économique et réduction du coût de la vie par la concurrence.",
+    "Séparation du religieux et de l'État sur le mariage, le chabbat et la conversion.",
+    "Bennett vient de la droite religieuse et du mouvement des implantations : il rejette un État palestinien tout en s'étant recentré."]},
+
+ {id:"democrates",nom:"Les Démocrates",tr:"HaDemokratim",chef:"Yaïr Golan",bloc:"opposition",couleur:"#9c5a7a",sieges:4,sondage:10,
+  etiq:"Gauche sioniste · fusion travaillistes et Meretz",
+  resume:"Fusion du Parti travailliste et du Meretz, ratifiée en 2026 sous la direction de Yaïr Golan, ancien chef d'état-major adjoint. Seule formation à majorité juive qui parle ouvertement du conflit israélo-palestinien.",
+  points:["Soutient une solution à deux États et l'arrêt de l'annexion rampante en Cisjordanie.",
+    "Séparation du religieux et de l'État : mariage civil, transports le chabbat.",
+    "Investissement massif dans la santé, l'éducation et le logement.",
+    "Plan spécifique pour les localités arabes, notamment contre la criminalité.",
+    "Défense de la Cour suprême et des contre-pouvoirs.",
+    "Prêt à s'appuyer sur les partis arabes pour construire une majorité."]},
+
+ {id:"beitenou",nom:"Israël Beitenou",tr:"« Israël notre maison »",chef:"Avigdor Lieberman",bloc:"opposition",couleur:"#b08a3e",sieges:6,sondage:10,
+  etiq:"Droite laïque · électorat russophone",
+  resume:"Ancré chez les Israéliens russophones et chez les laïcs de droite hostiles au pouvoir religieux. Lieberman est l'adversaire le plus constant de Netanyahou depuis 2019, tout en restant à droite sur la sécurité.",
+  points:["Conscription des harédim : combat central du parti depuis dix ans.",
+    "Séparation du religieux et de l'État, mariage civil, transports publics le chabbat.",
+    "Défense de la loi du retour, clause du petit-fils comprise, contre les partis religieux.",
+    "Ligne dure sur la sécurité et sur Gaza.",
+    "Refuse de siéger avec Netanyahou comme avec le parti arabe Raam.",
+    "Favorable à une constitution écrite."]},
+
+ {id:"otzma",nom:"Otzma Yehoudit",tr:"« puissance juive »",chef:"Itamar Ben Gvir",bloc:"droite",couleur:"#4a5a3a",sieges:6,sondage:9,
+  etiq:"Extrême droite · héritage kahaniste",
+  resume:"Héritier idéologique du parti Kach de Meïr Kahane, interdit pour incitation au racisme. Ben Gvir a fait passer ce courant de la marge au gouvernement : il est ministre de la Sécurité nationale depuis 2022.",
+  points:["Peine de mort pour les auteurs d'attentats : sa principale victoire législative.",
+    "Contrôle politique accru sur la police et durcissement des conditions de détention.",
+    "Souveraineté israélienne sur la Cisjordanie et retour des implantations à Gaza.",
+    "Opposition frontale à tout accord impliquant des concessions territoriales.",
+    "Se présente séparément du Sionisme religieux, contrairement à 2022.",
+    "Progresse en captant l'électorat de droite radicalisé après le 7 octobre."]},
+
+ {id:"shas",nom:"Shas",tr:"Shass",chef:"Aryé Deri",bloc:"droite",couleur:"#6b5b8a",sieges:11,sondage:8,
+  etiq:"Harédi séfarade · conservatisme social",
+  resume:"Représente les harédim séfarades et mizrahim, ainsi qu'un électorat traditionaliste de la périphérie. Ses décisions sont soumises à son Conseil des sages de la Torah.",
+  points:["Maintien des exemptions militaires pour les étudiants en yeshiva.",
+    "Financement public des institutions d'étude de la Torah et des réseaux scolaires religieux.",
+    "Autorité rabbinique sur le mariage, la conversion et le statut personnel.",
+    "Politique sociale généreuse envers les familles nombreuses et les quartiers défavorisés.",
+    "A quitté le gouvernement en juillet 2025 sur la conscription, tout en restant dans la coalition.",
+    "Alliance avec Netanyahou historiquement stable : une rupture reste peu probable."]},
+
+ {id:"yahadout",nom:"Yahadout HaTora",tr:"« judaïsme de la Torah »",chef:"Yitzhak Goldknopf et Moshé Gafni",bloc:"droite",couleur:"#3f6e6a",sieges:7,sondage:8,
+  etiq:"Harédi ashkénaze · parti sectoriel",
+  resume:"Alliance entre le courant hassidique et le courant lituanien. Parti strictement sectoriel : il défend les intérêts de la communauté harédie et se prononce peu sur le reste.",
+  points:["Sanctuarisation de l'exemption de service militaire : ligne rouge absolue.",
+    "Subventions aux yeshivot et aux kollelim, indépendance du système scolaire harédi.",
+    "Refus de l'enseignement des matières profanes imposé par l'État.",
+    "A quitté gouvernement et coalition en juillet 2025, provoquant la chute de la majorité.",
+    "Gafni a déclaré la fin du bloc historique entre le Likoud et les harédim.",
+    "Décisions soumises aux autorités rabbiniques hassidiques et lituaniennes."]},
+
+ {id:"hadash",nom:"Hadash-Taal-Balad",tr:"liste commune arabe",chef:"Youssef Jabarine, Ahmad Tibi, Sami Abou Chehadé",bloc:"arabe",couleur:"#8a7a4a",sieges:5,sondage:6,
+  etiq:"Arabe, non sioniste · gauche",
+  resume:"Liste commune conclue en août 2026 entre Hadash, front judéo-arabe d'origine communiste, Taal, mouvement arabe pour le renouveau, et Balad, nationalisme arabe laïque. L'objectif est d'éviter que des voix se perdent sous le seuil, comme en 2022.",
+  points:["Égalité pleine et entière des citoyens arabes d'Israël.",
+    "Solution à deux États et retrait des implantations.",
+    "Plan d'urgence contre la criminalité qui frappe les localités arabes.",
+    "Opposition à la loi fondamentale sur l'État-nation du peuple juif.",
+    "Politique économique de gauche : services publics, logement, droits sociaux.",
+    "Balad conteste la définition d'Israël comme État juif et défend un « État de tous ses citoyens »."]},
+
+ {id:"raam",nom:"Raam",tr:"Liste arabe unie",chef:"Mansour Abbas",bloc:"arabe",couleur:"#4a7a5e",sieges:5,sondage:5,
+  etiq:"Arabe · islamiste pragmatique",
+  resume:"Issu de la branche méridionale du Mouvement islamique. Abbas a rompu avec la doctrine du boycott en entrant dans la coalition Bennett-Lapid en 2021, une première historique pour un parti arabe.",
+  points:["Pragmatisme assumé : obtenir des budgets pour la société arabe plutôt que rester dans l'opposition.",
+    "Reconnaît explicitement Israël comme État juif, contrairement aux autres partis arabes.",
+    "Lutte contre la criminalité et plan de logement pour les localités arabes et bédouines.",
+    "Conservatisme social sur les questions de mœurs.",
+    "S'est séparé du conseil de la Choura en décembre 2025 pour devenir un parti civil autonome.",
+    "Ouvre désormais sa liste à des candidats juifs."]},
+
+ {id:"tsionout",nom:"Sionisme religieux",tr:"HaTsionout HaDatit",chef:"Betsalel Smotrich",bloc:"droite",couleur:"#7e8a5e",sieges:8,sondage:5,
+  etiq:"Extrême droite religieuse · menacé par le seuil",
+  resume:"Pilier de la coalition sortante, Smotrich a été ministre des Finances et ministre au sein du ministère de la Défense. Très efficace sur son objectif idéologique, il est aujourd'hui menacé par le seuil.",
+  points:["Application de la souveraineté israélienne sur la Cisjordanie : objectif explicite.",
+    "Expansion accélérée des implantations et légalisation des avant-postes.",
+    "Pression financière sur l'Autorité palestinienne.",
+    "Retour des implantations juives dans la bande de Gaza.",
+    "Conservatisme religieux sur la famille et le statut personnel ; alliance avec le parti Noam.",
+    "Concurrencé sur sa droite par le style plus frontal de Ben Gvir."]},
+
+ {id:"bayit",nom:"Bayit Tsioni",tr:"le Foyer sioniste, les Réservistes",chef:"Yoaz Hendel et Chili Tropper",bloc:"seuil",couleur:"#8a8078",sieges:0,sondage:3,
+  etiq:"Centre droit · réservistes · autour du seuil",
+  resume:"Né en juillet 2026 du ralliement de Chili Tropper au parti des Réservistes de Yoaz Hendel. Représente ceux qui ont porté l'effort de guerre. Son entrée à la Knesset est l'une des grandes inconnues du scrutin.",
+  points:["Gouvernement composé exclusivement de partis sionistes : ni harédim, ni partis arabes.",
+    "Service militaire ou civil obligatoire pour tous.",
+    "Commission d'enquête d'État sur le 7 octobre.",
+    "Plan national de prise en charge du stress post-traumatique.",
+    "N'exclut pas catégoriquement Netanyahou, à condition d'un large gouvernement sioniste.",
+    "Pourrait devenir faiseur de roi s'il franchit les 3,25 %."]}
+];
+
+/* positions : -2 opposé · -1 plutôt opposé · 0 neutre · 1 plutôt favorable · 2 favorable · null si pas de position claire */
+const QUESTIONS=[
+ {t:"Gouvernance",q:"Benjamin Netanyahou doit rester Premier ministre.",
+  pos:{likoud:2,otzma:1,tsionout:1,shas:1,yahadout:0,beyahad:-2,yashar:-2,beitenou:-2,democrates:-2,hadash:-2,raam:-2,bayit:0}},
+ {t:"Gouvernance",q:"Une commission d'enquête d'État indépendante doit être créée sur les défaillances du 7 octobre.",
+  pos:{likoud:-2,otzma:-1,tsionout:-1,shas:-1,yahadout:-1,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:2,raam:2,bayit:2}},
+ {t:"Gouvernance",q:"Israël doit se doter d'une constitution écrite, à la place des actuelles lois fondamentales.",
+  pos:{likoud:-1,otzma:-1,tsionout:-2,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:1,hadash:null,raam:null,bayit:1}},
+ {t:"Gouvernance",q:"Il faut réduire le pouvoir de la Cour suprême au profit des élus.",
+  pos:{likoud:2,otzma:2,tsionout:2,shas:1,yahadout:1,beyahad:-1,yashar:-1,beitenou:-1,democrates:-2,hadash:-1,raam:-1,bayit:-1}},
+ {t:"Gouvernance",q:"Le mandat de Premier ministre doit être limité dans le temps.",
+  pos:{likoud:-2,otzma:-1,tsionout:-1,shas:-1,yahadout:-1,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:1,raam:1,bayit:1}},
+ {t:"Religion et État",q:"Les jeunes hommes harédim doivent être enrôlés dans l'armée comme les autres citoyens.",
+  pos:{likoud:-1,otzma:0,tsionout:-1,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:null,raam:null,bayit:2}},
+ {t:"Religion et État",q:"L'État doit continuer à financer largement les institutions d'étude de la Torah.",
+  pos:{likoud:1,otzma:1,tsionout:1,shas:2,yahadout:2,beyahad:-2,yashar:-1,beitenou:-2,democrates:-2,hadash:-1,raam:null,bayit:-1}},
+ {t:"Religion et État",q:"Le mariage civil doit être instauré en Israël.",
+  pos:{likoud:-1,otzma:-2,tsionout:-2,shas:-2,yahadout:-2,beyahad:2,yashar:1,beitenou:2,democrates:2,hadash:1,raam:-1,bayit:1}},
+ {t:"Religion et État",q:"Les transports publics doivent fonctionner le chabbat.",
+  pos:{likoud:-1,otzma:-2,tsionout:-2,shas:-2,yahadout:-2,beyahad:1,yashar:1,beitenou:2,democrates:2,hadash:1,raam:null,bayit:1}},
+ {t:"Religion et État",q:"Un service national civil doit être obligatoire pour tous ceux qui ne font pas l'armée, harédim et Arabes compris.",
+  pos:{likoud:0,otzma:0,tsionout:-1,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:1,hadash:-2,raam:-1,bayit:2}},
+ {t:"Sécurité et Palestiniens",q:"Un État palestinien aux côtés d'Israël est une issue acceptable au conflit.",
+  pos:{likoud:-2,otzma:-2,tsionout:-2,shas:null,yahadout:null,beyahad:-2,yashar:-1,beitenou:-1,democrates:2,hadash:2,raam:2,bayit:-1}},
+ {t:"Sécurité et Palestiniens",q:"Israël doit appliquer sa souveraineté sur tout ou partie de la Cisjordanie.",
+  pos:{likoud:1,otzma:2,tsionout:2,shas:0,yahadout:null,beyahad:-1,yashar:-1,beitenou:0,democrates:-2,hadash:-2,raam:-2,bayit:0}},
+ {t:"Sécurité et Palestiniens",q:"Israël doit conserver durablement un contrôle militaire sur la bande de Gaza.",
+  pos:{likoud:1,otzma:2,tsionout:2,shas:0,yahadout:null,beyahad:1,yashar:0,beitenou:1,democrates:-2,hadash:-2,raam:-2,bayit:1}},
+ {t:"Sécurité et Palestiniens",q:"Des implantations juives doivent être rétablies dans la bande de Gaza.",
+  pos:{likoud:0,otzma:2,tsionout:2,shas:0,yahadout:null,beyahad:-2,yashar:-2,beitenou:-1,democrates:-2,hadash:-2,raam:-2,bayit:-2}},
+ {t:"Sécurité et Palestiniens",q:"La peine de mort doit s'appliquer aux auteurs d'attentats.",
+  pos:{likoud:1,otzma:2,tsionout:2,shas:1,yahadout:null,beyahad:-1,yashar:-1,beitenou:1,democrates:-2,hadash:-2,raam:-2,bayit:0}},
+ {t:"Sécurité et Palestiniens",q:"Israël doit normaliser ses relations avec l'Arabie saoudite, même au prix de concessions envers les Palestiniens.",
+  pos:{likoud:0,otzma:-2,tsionout:-2,shas:null,yahadout:null,beyahad:1,yashar:1,beitenou:0,democrates:2,hadash:1,raam:2,bayit:0}},
+ {t:"Société",q:"Les partis arabes doivent pouvoir participer à une coalition gouvernementale.",
+  pos:{likoud:-2,otzma:-2,tsionout:-2,shas:-1,yahadout:-1,beyahad:0,yashar:0,beitenou:-2,democrates:2,hadash:1,raam:2,bayit:-2}},
+ {t:"Société",q:"Les partis harédim ne doivent pas faire partie du prochain gouvernement.",
+  pos:{likoud:-2,otzma:-1,tsionout:-1,shas:-2,yahadout:-2,beyahad:1,yashar:1,beitenou:2,democrates:1,hadash:null,raam:null,bayit:2}},
+ {t:"Société",q:"La loi fondamentale faisant d'Israël l'État-nation du peuple juif doit être maintenue telle quelle.",
+  pos:{likoud:2,otzma:2,tsionout:2,shas:1,yahadout:1,beyahad:1,yashar:1,beitenou:1,democrates:-1,hadash:-2,raam:-2,bayit:1}},
+ {t:"Société",q:"Un plan budgétaire massif doit être spécifiquement consacré aux localités arabes.",
+  pos:{likoud:-1,otzma:-2,tsionout:-2,shas:0,yahadout:0,beyahad:1,yashar:1,beitenou:-1,democrates:2,hadash:2,raam:2,bayit:-1}},
+ {t:"Société",q:"Il faut faciliter et accélérer l'aliya, y compris pour les personnes éligibles par un grand-parent juif.",
+  pos:{likoud:0,otzma:-1,tsionout:-1,shas:-2,yahadout:-2,beyahad:1,yashar:2,beitenou:2,democrates:1,hadash:null,raam:null,bayit:1}},
+ {t:"Économie",q:"L'État doit investir davantage dans la santé, l'éducation et le logement, quitte à augmenter les impôts.",
+  pos:{likoud:-1,otzma:0,tsionout:-1,shas:1,yahadout:1,beyahad:0,yashar:0,beitenou:-1,democrates:2,hadash:2,raam:1,bayit:0}}
+];
+
+/* ── compte à rebours ─────────────────────────────────── */
+(function(){
+  const j=new Date("2026-10-27T07:00:00+03:00"), el=document.getElementById("compteur");
+  const maj=()=>{const n=Math.ceil((j-new Date())/864e5);
+    el.textContent = n>1 ? "Dans "+n+" jours" : n===1 ? "Demain" : n===0 ? "Aujourd'hui" : "Scrutin passé";};
+  maj(); setInterval(maj,60000);
+})();
+
+/* ── barre de sièges ──────────────────────────────────── */
+const ARC=PARTIS.filter(p=>p.bloc!=="seuil");
+(function(){
+  const barre=document.getElementById("barre");
+  barre.innerHTML = ARC.map(p=>
+    `<div class="seg" data-bloc="${p.bloc}" data-p="${p.id}" style="flex:${p.sondage};background:${p.couleur}"
+      title="${p.nom} — ${p.sondage} sièges"></div>`).join("")
+    + `<span class="marque61" style="left:${61/120*100}%"></span>`;
+
+  const totaux={
+    droite:{n:53,t:"Bloc Netanyahou",d:"Likoud, Otzma Yehoudit, Shas, Yahadout HaTora, Sionisme religieux."},
+    opposition:{n:56,t:"Opposition sioniste",d:"Yashar, Beyahad, les Démocrates, Israël Beitenou."},
+    arabe:{n:11,t:"Partis arabes",d:"Hadash-Taal-Balad et Raam, que la plupart des partis sionistes refusent comme partenaires."}
+  };
+  document.getElementById("blocs").innerHTML = Object.entries(totaux).map(([k,v])=>
+    `<button class="bloc-b" data-bloc="${k}" aria-pressed="false">
+       <span class="n">${v.n}</span><span class="t">${v.t}</span><span class="d">${v.d}</span>
+     </button>`).join("");
+
+  let actif=null;
+  document.querySelectorAll(".bloc-b").forEach(b=>b.addEventListener("click",()=>{
+    actif = actif===b.dataset.bloc ? null : b.dataset.bloc;
+    document.querySelectorAll(".bloc-b").forEach(x=>x.setAttribute("aria-pressed", x.dataset.bloc===actif));
+    barre.querySelectorAll(".seg").forEach(s=>s.classList.toggle("pale", actif!==null && s.dataset.bloc!==actif));
+  }));
+  barre.addEventListener("click",e=>{const s=e.target.closest(".seg"); if(s) deplier(s.dataset.p);});
+})();
+
+/* ── liste des partis ─────────────────────────────────── */
+const liste=document.getElementById("liste");
+function rendre(f){
+  const l = f==="tout" ? PARTIS : PARTIS.filter(p=>p.bloc===f);
+  liste.innerHTML = l.map(p=>`
+    <div class="ligne" data-on="0" id="ligne-${p.id}">
+      <button class="ligne-tete" aria-expanded="false">
+        <span class="pastille" style="background:${p.couleur}"></span>
+        <span class="ligne-nom">${p.nom}<i>${p.chef}</i></span>
+        <span class="ligne-etiq">${p.etiq}</span>
+        <span class="ligne-mesure">
+          <span class="mini"><i style="width:${p.sondage/23*100}%;background:${p.couleur}"></i></span>
+          <b>${p.sondage}</b>
+        </span>
+        <span class="chev">▾</span>
+      </button>
+      <div class="ligne-corps">
+        <div>
+          <span class="label">En deux mots</span>
+          <p>${p.resume}</p>
+          <p class="pied">${p.tr} · ${p.sieges} sièges dans la Knesset sortante · environ ${p.sondage} dans la moyenne des sondages d'août 2026.</p>
+        </div>
+        <div>
+          <span class="label">Ce qu'il défend</span>
+          <ul>${p.points.map(x=>`<li>${x}</li>`).join("")}</ul>
+        </div>
+      </div>
+    </div>`).join("");
+}
+rendre("tout");
+document.getElementById("filtres").addEventListener("click",e=>{
+  const b=e.target.closest(".filtre"); if(!b) return;
+  document.querySelectorAll(".filtre").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true"); rendre(b.dataset.f);
+});
+liste.addEventListener("click",e=>{
+  const t=e.target.closest(".ligne-tete"); if(!t) return;
+  const l=t.parentElement, ouvert=l.dataset.on==="1";
+  l.dataset.on = ouvert ? "0" : "1";
+  t.setAttribute("aria-expanded", String(!ouvert));
+});
+function deplier(id){
+  const l=document.getElementById("ligne-"+id); if(!l) return;
+  l.dataset.on="1"; l.querySelector(".ligne-tete").setAttribute("aria-expanded","true");
+  l.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+/* ── questionnaire ────────────────────────────────────── */
+const CHOIX=[{t:2,l:"Tout à fait d'accord"},{t:1,l:"Plutôt d'accord"},{t:0,l:"Sans opinion tranchée"},
+             {t:-1,l:"Plutôt pas d'accord"},{t:-2,l:"Pas du tout d'accord"}];
+let idx=0;
+const rep=new Array(QUESTIONS.length).fill(null), poids=new Array(QUESTIONS.length).fill(1);
+const zone=document.getElementById("quizIn"), prog=document.getElementById("progres");
+
+function question(){
+  if(idx>=QUESTIONS.length){resultats(); return;}
+  const q=QUESTIONS[idx];
+  prog.style.width=(idx/QUESTIONS.length*100)+"%";
+  zone.innerHTML=`
+    <div class="quiz-meta"><span class="label">${q.t}</span><span class="quiz-num">${idx+1} sur ${QUESTIONS.length}</span></div>
+    <h3 class="quiz-q">${q.q}</h3>
+    <div class="reps">${CHOIX.map(c=>`<button class="rep" data-t="${c.t}"><i></i>${c.l}</button>`).join("")}</div>
+    <div class="quiz-pied">
+      <span class="poids">Ce sujet compte
+        <button data-poids="1" aria-pressed="${poids[idx]===1}">normalement</button>
+        <button data-poids="2" aria-pressed="${poids[idx]===2}">beaucoup</button></span>
+      <span>${idx>0?'<button class="txt-btn" data-nav="prec">Précédente</button>':''}<button class="txt-btn" data-nav="skip">Passer</button></span>
+    </div>`;
+}
+zone.addEventListener("click",e=>{
+  const r=e.target.closest(".rep");
+  if(r){rep[idx]=Number(r.dataset.t); idx++; question(); return;}
+  const p=e.target.closest("[data-poids]");
+  if(p){poids[idx]=Number(p.dataset.poids); question(); return;}
+  const n=e.target.closest("[data-nav]");
+  if(n){ if(n.dataset.nav==="skip"){rep[idx]=null; idx++;} else {idx=Math.max(0,idx-1);} question(); }
+});
+
+function resultats(){
+  prog.style.width="100%";
+  const scores=PARTIS.map(p=>{
+    let num=0,den=0;
+    QUESTIONS.forEach((q,i)=>{
+      const r=rep[i], v=q.pos[p.id];
+      if(r===null||v===null||v===undefined) return;
+      num+=poids[i]*(1-Math.abs(r-v)/4); den+=poids[i];
+    });
+    return {p,pct:den?Math.round(num/den*100):null};
+  }).filter(s=>s.pct!==null).sort((a,b)=>b.pct-a.pct);
+
+  if(!scores.length){
+    zone.innerHTML=`<h3 class="quiz-q">Aucune réponse enregistrée.</h3>
+      <button class="txt-btn" onclick="location.reload()">Recommencer</button>`; return;
+  }
+  const top=scores[0];
+  const det=QUESTIONS.map((q,i)=>{
+    const r=rep[i], v=q.pos[top.p.id];
+    if(r===null||v===null||v===undefined) return null;
+    return {q:q.q,e:Math.abs(r-v)};
+  }).filter(Boolean);
+  const pour=det.filter(d=>d.e<=1).slice(0,3), contre=det.filter(d=>d.e>=3).slice(0,3);
+
+  zone.innerHTML=`
+    <div class="quiz-meta"><span class="label">Résultat</span><span class="quiz-num">${rep.filter(r=>r!==null).length} réponses retenues</span></div>
+    <h3 class="quiz-q">Vos réponses vous rapprochent le plus de ${top.p.nom}.</h3>
+    <div class="res-liste">
+      ${scores.map((s,i)=>`
+        <div class="res${i===0?' top':''}">
+          <span class="pastille" style="background:${s.p.couleur}"></span>
+          <span class="res-nom">${s.p.nom}<i>${s.p.chef}</i></span>
+          <span class="res-bar"><i style="background:${s.p.couleur}" data-w="${s.pct}"></i></span>
+          <span class="res-pct">${s.pct} %</span>
+        </div>`).join("")}
+    </div>
+    <div class="res-notes">
+      ${pour.length?`<span class="label">Vous rejoignez ${top.p.nom} sur</span><ul>${pour.map(a=>`<li>${a.q}</li>`).join("")}</ul>`:""}
+      ${contre.length?`<span class="label">Vous vous en éloignez sur</span><ul>${contre.map(a=>`<li>${a.q}</li>`).join("")}</ul>`:""}
+      <span class="label">Une réserve</span>
+      <p>Ce pourcentage mesure une proximité sur vingt-deux sujets, rien de plus. Il ne dit rien de la
+      confiance que vous accordez à un dirigeant, ni du calcul stratégique : voter pour une petite liste
+      qui échoue à 3,25 % revient à perdre sa voix. Un score élevé pour un parti qui refuse de siéger avec
+      ceux que vous soutenez par ailleurs mérite lui aussi réflexion.</p>
+      <p><button class="txt-btn" onclick="location.reload()">Recommencer le questionnaire</button></p>
+    </div>`;
+  requestAnimationFrame(()=>zone.querySelectorAll(".res-bar i").forEach(i=>i.style.width=i.dataset.w+"%"));
+}
+question();
+</script>
+</body>
+</html>
