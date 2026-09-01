@@ -662,8 +662,8 @@ footer li{margin-bottom:7px}
       <span class="label">Le questionnaire</span>
       <h2>De quelles idées êtes-vous le plus proche</h2>
       <p>Vingt-cinq propositions concrètes, choisies parce qu'elles séparent réellement les partis. Chacune
-         correspond à un arbitrage débattu à la Knesset, pas à un slogan. Signalez celles qui comptent
-         davantage pour vous. Rien n'est transmis nulle part : le calcul se fait dans votre navigateur.</p>
+         correspond à un arbitrage débattu à la Knesset, pas à un slogan, et toutes comptent à égalité.
+         Rien n'est transmis nulle part : le calcul se fait dans votre navigateur.</p>
     </div>
     <div class="quiz">
       <div class="progres"><i id="progres"></i></div>
@@ -1304,17 +1304,13 @@ function question(){
     <p class="quiz-note">${q.n}</p>
     <div class="reps">${CHOIX.map(c=>`<button class="rep" data-t="${c.t}"><i></i>${c.l}</button>`).join("")}</div>
     <div class="quiz-pied">
-      <span class="poids">Ce sujet compte
-        <button data-poids="1" aria-pressed="${poids[idx]===1}">normalement</button>
-        <button data-poids="2" aria-pressed="${poids[idx]===2}">beaucoup</button></span>
-      <span>${idx>0?'<button class="txt-btn" data-nav="prec">Précédente</button>':''}<button class="txt-btn" data-nav="skip">Passer</button></span>
+      <span>${idx>0?'<button class="txt-btn" data-nav="prec">← Précédente</button>':'<span class="quiz-num">Aucune réponse n\'est enregistrée</span>'}</span>
+      <span><button class="txt-btn" data-nav="skip">Passer cette question</button></span>
     </div>`;
 }
 zone.addEventListener("click",e=>{
   const r=e.target.closest(".rep");
   if(r){rep[idx]=Number(r.dataset.t); idx++; question(); return;}
-  const p=e.target.closest("[data-poids]");
-  if(p){poids[idx]=Number(p.dataset.poids); question(); return;}
   const n=e.target.closest("[data-nav]");
   if(n){ if(n.dataset.nav==="skip"){rep[idx]=null; idx++;} else {idx=Math.max(0,idx-1);} question(); }
 });
