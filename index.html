@@ -124,6 +124,11 @@ section.creux{background:var(--papier-creux)}
 .ligne-nom{font-family:'Instrument Serif',serif;font-size:27px;letter-spacing:-.015em}
 .ligne-nom i{display:block;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--gris);margin-top:4px;letter-spacing:0}
 .ligne-etiq{font-size:15.5px;color:var(--gris);line-height:1.4}
+.cta{display:block;margin-top:10px;font-family:'Instrument Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--claret)}
+.cta .c2{display:none}
+.ligne[data-on="1"] .cta .c1{display:none}
+.ligne[data-on="1"] .cta .c2{display:inline}
+.ligne-tete:hover .cta{text-decoration:underline;text-underline-offset:4px}
 .ligne-mesure{display:flex;align-items:center;gap:11px;justify-content:flex-end}
 .mini{height:6px;flex:1;background:var(--filet);max-width:96px}
 .mini i{display:block;height:100%}
@@ -468,7 +473,7 @@ footer li{margin-bottom:7px}
       <h2>Qui se présente, et pour défendre quoi</h2>
       <p>Pour chaque liste : son origine, son électorat, ses engagements, ses lignes rouges de coalition,
          et la manière dont elle compose sa liste de candidats — un détail qui décide, en pratique, qui
-         siégera à la Knesset.</p>
+         siégera à la Knesset. <strong>Touchez une ligne pour ouvrir sa fiche complète.</strong></p>
       <p style="font-size:16px;color:var(--gris-clair);margin-top:16px">Critère de sélection : figurent ici
          les formations que les sondages publiés en août 2026 créditent d'au moins quatre sièges, plus
          celles qui oscillent autour du seuil de 3,25 %. D'autres listes se présenteront — leur nombre et
@@ -1063,17 +1068,22 @@ const PARTIS=[
   axes:{netanyahou:"Le remplacer",conscription:"Service civil volontaire",justice:"Défense des contre-pouvoirs",palestiniens:"Deux États"}},
 
  {id:"tsionout",nom:"HaTsionout HaDatit-Zehout",tr:"alliance technique du sionisme religieux et de Zehout, « identité »",chef:"Betsalel Smotrich et Moshé Feiglin",bloc:"droite",couleur:"#7e8a5e",sieges:8,sondage:5,
-  etiq:"Extrême droite religieuse · alliance du 1er septembre",
+  etiq:"Deux droites radicales sur un même bulletin · alliance du 1er septembre",
   origine:"Pilier de la coalition sortante, Smotrich a été ministre des Finances et ministre au sein du ministère de la Défense, avec autorité sur l'administration civile en Cisjordanie. Tombé sous le seuil dans plusieurs sondages d'août, il a signé le 1er septembre 2026 une alliance technique avec Zehout, le parti de Moshé Feiglin, ancien député du Likoud passé à la droite libertarienne et religieuse.",
-  electorat:"HaTsionout HaDatit idéologique, habitants des implantations, jeunesse des yeshivot nationales-religieuses. Zehout y ajoute un électorat libertarien, hostile à la contrainte étatique et attaché au mont du Temple.",
+  electorat:"Public du sionisme religieux idéologique, habitants des implantations, jeunesse des yeshivot nationales-religieuses. Zehout y ajoute un électorat très différent : libertariens hostiles à la bureaucratie, jeunes attirés par la légalisation du cannabis, militants du mont du Temple.",
   points:["Application de la souveraineté israélienne sur la Cisjordanie, sans attendre d'accord.",
     "Expansion accélérée des implantations et légalisation rétroactive des avant-postes.",
     "Pression financière sur l'Autorité palestinienne et refus de tout horizon étatique palestinien.",
     "Rétablissement des implantations juives dans la bande de Gaza.",
     "Clause dérogatoire et reprise en main de la nomination des juges.",
-    "Conservatisme religieux sur la famille et le statut personnel, en alliance avec le parti Noam."],
+    "Conservatisme religieux sur la famille et le statut personnel, en alliance avec le parti Noam.",
+    "Côté Zehout, un programme libertarien assumé, exposé dans un ouvrage de 344 pages intitulé « Être un juif libre » : réduction du nombre de ministères de vingt-neuf à onze, refus de l'excès de législation, transfert de compétences aux communes.",
+    "Côté Zehout, marché libre intégral : suppression des droits de douane et des normes jugées superflues, abolition des taxes d'achat et de construction, refonte des commissions d'urbanisme pour faire baisser le prix du logement.",
+    "Côté Zehout, légalisation des drogues douces et accès libre au cannabis thérapeutique. C'est la mesure la plus connue du parti, et celle qui lui amène un électorat étranger à la droite religieuse.",
+    "Côté Zehout, souveraineté sur toutes les parties de la terre d'Israël, le mont du Temple au premier rang, avec liberté de prière juive sur le site.",
+    "Feiglin s'est allié en mai 2026 au mouvement Israël juive de Michael Ben Ari, dont la candidature avait été invalidée en 2019 pour incitation au racisme."],
   liste:"Instances internes du parti. Aux termes de l'accord du 1er septembre, Feiglin obtient la deuxième place ainsi que les huitième et dixième, la répartition restant à finaliser.",
-  rouge:"Alliance technique, non fusion : chaque parti conserve son identité, son programme et ses principes. Smotrich reste dans le bloc Netanyahou et appelle d'autres formations de droite à rejoindre la liste, Ofer Winter en tête. Ben Gvir a publiquement refusé de s'y joindre.",
+  rouge:"Alliance technique, et non fusion : chaque parti conserve son identité, son programme et ses principes, et les deux divergent nettement. Smotrich défend un État religieux interventionniste, Feiglin veut réduire l'État au minimum et légaliser le cannabis. Les deux hommes assument publiquement ces différences. Smotrich reste dans le bloc Netanyahou et appelle d'autres formations de droite à rejoindre la liste, Ofer Winter en tête. Ben Gvir a publiquement refusé de s'y joindre.",
   axes:{netanyahou:"Le soutenir",conscription:"Compromis favorable aux harédim",justice:"Clause dérogatoire",palestiniens:"Souveraineté totale"}},
 
  {id:"amkha",nom:"Amkha Israël",tr:"« le peuple d'Israël »",chef:"Ofer Winter",bloc:"seuil",couleur:"#6b6f77",sieges:0,sondage:4,
@@ -1248,7 +1258,7 @@ function rendre(f){
     <div class="ligne" data-on="0" id="ligne-${p.id}">
       <button class="ligne-tete" aria-expanded="false">
         <span class="pastille" style="background:${p.couleur}"></span>
-        <span class="ligne-nom">${p.nom}<i>${p.chef}</i></span>
+        <span class="ligne-nom">${p.nom}<i>${p.chef}</i><b class="cta"><span class="c1">Voir le programme →</span><span class="c2">Fermer ×</span></b></span>
         <span class="ligne-etiq">${p.etiq}</span>
         <span class="ligne-mesure"><span class="mini"><i style="width:${p.sondage/24*100}%;background:${p.couleur}"></i></span><b>${p.sondage}</b></span>
         <span class="chev">▾</span>
