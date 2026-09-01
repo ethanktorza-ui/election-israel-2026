@@ -1,31 +1,26 @@
 GUIDE ELECTIONS ISRAEL 2026 — MISE EN LIGNE
-Version du 1er septembre 2026
 
 CE DOSSIER CONTIENT
-  index.html   le site entier (un seul fichier, rien a installer)
-  apercu.png   l'image qui s'affiche quand on partage le lien
+  index.html   le site entier (un seul fichier)
+  apercu.png   l'image affichee quand on partage le lien
   A-LIRE.txt   ce fichier, a ne PAS envoyer sur GitHub
 
 CE QU'IL FAUT FAIRE
-  1. Aller sur github.com, depot election-israel-2026
-  2. Verifier que le bouton de gauche affiche bien : main
-  3. Cliquer sur Add file, puis Upload files
-  4. Glisser LES DEUX fichiers ensemble : index.html ET apercu.png
-  5. Descendre en bas, ecrire : Mise a jour du 1er septembre
-  6. Cliquer sur le bouton vert Commit changes
-  7. Attendre 5 minutes (le fichier est lourd, la publication est lente)
+  1. github.com, depot election-israel-2026
+  2. Verifier que le bouton de gauche affiche : main
+  3. Add file > Upload files
+  4. Glisser LES DEUX fichiers : index.html ET apercu.png
+  5. En bas, ecrire : Mise a jour du 1er septembre
+  6. Bouton vert Commit changes
+  7. Attendre 5 minutes
 
-VERIFIER QUE C'EST BON
-  Ouvrir electionisrael2026.com en navigation privee (Cmd + Maj + N)
-  Le titre doit etre : 120 sieges a la Knesset. Il en faut 61 pour gouverner.
-  Le menu doit avoir 7 entrees, dont Alliances et Methode
-  Chaque parti doit afficher : Voir le programme
+VERIFIER
+  electionisrael2026.com en navigation privee (Cmd + Maj + N)
+  Titre attendu : 120 sieges a la Knesset. Il en faut 61 pour gouverner.
+  Menu a 7 entrees, dont Alliances et Methode
+  Section Voter : 8 points pratiques
 
-SI L'APERCU NE S'AFFICHE PAS DANS WHATSAPP
-  Les messageries gardent l'ancien apercu plusieurs jours.
-  Partager electionisrael2026.com/?2 pour forcer la mise a jour.
-
-CE QUI RESTE A FAIRE PLUS TARD
+RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS
   Supprimer le vieux fichier elections-israel-2026-fr (1).html
-  Le 8 septembre : reecrire la section Alliances, les listes seront definitives
+  Le 8 septembre : reecrire la section Alliances
