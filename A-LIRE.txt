@@ -19,6 +19,7 @@ VERIFIER
   Titre attendu : 120 sieges a la Knesset. Il en faut 61 pour gouverner.
   Menu a 7 entrees, dont Alliances et Methode
   Section Voter : 8 points pratiques
+  Section Alliances : Deja conclues / En negociation / Comment lire ces alliances
 
 RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS
