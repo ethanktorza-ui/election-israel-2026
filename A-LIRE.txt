@@ -5,29 +5,26 @@ CE DOSSIER CONTIENT
   apercu.png   l'image affichee quand on partage le lien
   A-LIRE.txt   ce fichier, a ne PAS envoyer sur GitHub
 
-CE QU'IL FAUT FAIRE
-  1. github.com, depot election-israel-2026
-  2. Verifier que le bouton de gauche affiche : main
-  3. Add file > Upload files
-  4. Glisser LES DEUX fichiers : index.html ET apercu.png
-  5. En bas, ecrire : Mise a jour
-  6. Bouton vert Commit changes
-  7. Attendre 5 minutes
+ENVOI SUR GITHUB
+  1. github.com, depot election-israel-2026, branche main
+  2. Add file > Upload files
+  3. Glisser index.html ET apercu.png
+  4. Message : Mise a jour
+  5. Commit changes, puis attendre 5 minutes
 
-NOUVEAU : LE SITE EST EN PAGES SEPAREES
-  8 pages : Accueil, Le systeme, Les partis, Les alliances,
-  Le questionnaire, Travailler, Voter, Methode et sources.
-  Un clic sur le menu change de page et remonte en haut.
-  Les boutons Precedent/Suivant du navigateur fonctionnent.
-  Chaque page se termine par un lien vers la suivante.
+TESTE SUR 11 FORMATS
+  iPhone SE, Android compact, iPhone 14, Android large, iPhone Pro Max,
+  iPad mini, iPad Air, iPad Pro 11, iPad 1024, iPad paysage, bureau.
+  Aucun debordement, 35 a 66 caracteres par ligne partout.
 
-  Adresses directes a partager :
-    electionisrael2026.com/#partis
-    electionisrael2026.com/#questionnaire
-    electionisrael2026.com/#alliances
-    electionisrael2026.com/#voter
+LE SITE EST EN 8 PAGES SEPAREES
+  Adresses directes : electionisrael2026.com/#partis, /#questionnaire, /#voter
+
+A FAIRE APRES LE 8 SEPTEMBRE — IMPORTANT
+  Remplacer les lettres de bulletin (page Voter, point 7) :
+  aujourd'hui ce sont celles de 2022, donnees a titre d'exemple.
+  Reecrire la section Alliances : les listes seront definitives.
 
 RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS
   Supprimer le vieux fichier elections-israel-2026-fr (1).html
-  Le 8 septembre : reecrire la section Alliances

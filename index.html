@@ -100,7 +100,7 @@ section.creux{background:var(--papier-creux)}
 .sec-tete p{margin:20px 0 0;font-size:19px;color:#3a3631;font-weight:300}
 
 .colonnes{columns:2;column-gap:56px;column-rule:1px solid var(--filet)}
-@media (max-width:840px){.colonnes{columns:1}}
+@media (max-width:700px){.colonnes{columns:1}}
 .regle{break-inside:avoid;margin-bottom:34px}
 .regle h3{font-size:21px;font-weight:600;margin-bottom:9px;display:flex;gap:12px;align-items:baseline}
 .regle h3 span{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;color:var(--claret);letter-spacing:.1em}
@@ -150,7 +150,7 @@ section.creux{background:var(--papier-creux)}
 .axe dt{font-family:'Instrument Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gris-clair);margin-bottom:6px}
 .axe dd{margin:0;font-size:15.5px;color:#3a3631;line-height:1.45}
 .pied-fiche{margin-top:22px;font-size:14.5px;color:var(--gris-clair);font-style:italic}
-@media (max-width:900px){
+@media (max-width:760px){
   .ligne-tete{grid-template-columns:12px 1fr 84px;gap:14px}
   .ligne-etiq,.chev{display:none}
   .ligne-mesure .mini{display:none}
@@ -178,7 +178,7 @@ section.creux{background:var(--papier-creux)}
 .jauge-etat.fait{color:#3d6b4a}.jauge-etat.fait::before{background:#3d6b4a}
 .jauge-etat.encours{color:#9a7326}.jauge-etat.encours::before{background:#9a7326}
 .jauge-etat.risque{color:var(--claret)}.jauge-etat.risque::before{background:var(--claret)}
-@media (max-width:760px){.cas{grid-template-columns:1fr;gap:12px}}
+@media (max-width:700px){.cas{grid-template-columns:1fr;gap:12px}}
 
 /* questionnaire */
 .quiz{max-width:760px;margin:0 auto;background:var(--papier);border:1px solid var(--filet-fort)}
@@ -254,6 +254,19 @@ footer li{margin-bottom:7px}
 .ours a{color:#9a958d;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
 .ours a:hover{color:#e6e0d6}
 .ours{margin-top:50px;line-height:1.9;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.06em;color:#7d786f}
+
+.lettres{display:grid;grid-template-columns:repeat(auto-fit,minmax(146px,1fr));gap:1px;background:var(--filet);border:1px solid var(--filet);margin-top:14px}
+.lettres div{background:var(--papier-creux);padding:12px 14px;display:flex;align-items:baseline;gap:11px;font-size:15px;color:var(--gris)}
+.lettres span{font-family:'Instrument Sans',sans-serif;font-size:21px;color:var(--encre);font-weight:600;unicode-bidi:isolate}
+
+/* tablettes : longueur de ligne lisible */
+@media (min-width:701px) and (max-width:1100px){
+  .wrap{padding-left:34px;padding-right:34px}
+  .colonnes{column-gap:44px}
+  .sec-tete p,.exergue p,.avert p,.etat-groupe>p.intro{max-width:60ch}
+  .une .chapeau{max-width:54ch}
+  .sieges-tete p{max-width:42ch}
+}
 
 /* pages */
 [data-page]{display:none}
@@ -340,9 +353,9 @@ footer li{margin-bottom:7px}
   .ours{margin-top:34px}
 }
 @media (max-width:430px){
-  .wrap{padding:0 17px}
-  .une h1{font-size:28px}
-  .une .chapeau{font-size:16.5px}
+  .wrap{padding:0 clamp(16px,4.4vw,19px)}
+  .une h1{font-size:clamp(26px,7.8vw,34px)}
+  .une .chapeau{font-size:clamp(16px,4.2vw,17.5px)}
   .quiz{margin-left:-17px;margin-right:-17px}
   .quiz-in{padding:24px 17px}
   .quiz-q{font-size:21px}
@@ -366,7 +379,7 @@ footer li{margin-bottom:7px}
 .sond .org small{display:block;font-style:italic;color:var(--gris);font-size:14px;margin-top:3px}
 .blackout{border-left:3px solid var(--claret);padding:2px 0 2px 24px;margin-top:26px}
 .blackout p{margin:0;font-size:16.5px;color:#3a3631}
-@media (max-width:900px){.meth{grid-template-columns:1fr;gap:34px}}
+@media (max-width:760px){.meth{grid-template-columns:1fr;gap:34px}}
 @media (max-width:640px){
   .sond thead{display:none}
   .sond td{display:block;padding:4px 0;border:0}
@@ -841,13 +854,35 @@ footer li{margin-bottom:7px}
            la commission. Les lettres attribuées à chaque liste sont publiées après le dépôt du
            8 septembre.</p></div>
 
-      <div class="regle"><h3><span>7</span>Horaires et transports</h3>
+      <div class="regle"><h3><span>7</span>Les lettres du bulletin</h3>
+        <p>Le bulletin ne porte ni nom de parti, ni photo, ni logo : uniquement une à trois lettres
+           hébraïques, qui identifient la liste. Certaines formations conservent les mêmes depuis des
+           décennies, au point qu'elles font partie de leur identité. Les nouvelles listes en reçoivent
+           de la Commission électorale centrale, qui publie la table officielle après le dépôt des
+           candidatures du 8 septembre.</p>
+        <p style="margin-top:12px">À titre d'exemple, voici les lettres portées par quelques formations
+           lors du scrutin de 2022. <strong>Elles ne valent pas pour 2026</strong> : une liste qui fusionne
+           ou change de nom peut en changer.</p>
+        <div class="lettres">
+          <div><span dir="rtl" lang="he">מחל</span>Likoud</div>
+          <div><span dir="rtl" lang="he">שס</span>Shas</div>
+          <div><span dir="rtl" lang="he">ג</span>Yahadout HaTora</div>
+          <div><span dir="rtl" lang="he">ל</span>Israël Beitenou</div>
+          <div><span dir="rtl" lang="he">עם</span>Raam</div>
+          <div><span dir="rtl" lang="he">אמת</span>Travaillistes</div>
+        </div>
+        <p style="margin-top:14px">La table complète et vérifiée des lettres de 2026 sera publiée ici dès
+           sa parution par la Commission. En attendant, la règle est simple : dans l'isoloir, tous les
+           bulletins sont posés côte à côte, et le nom de la liste figure sur l'affiche officielle placardée
+           dans le bureau. En cas de doute, on demande au secrétaire, dont c'est précisément le rôle.</p></div>
+
+      <div class="regle"><h3><span>8</span>Horaires et transports</h3>
         <p>La journée est chômée et les transports publics sont gratuits pour rejoindre son bureau. Les
            bureaux ouvrent en règle générale tôt le matin et ferment à 22 heures, avec des horaires
            réduits dans les très petites localités. Les horaires exacts et la carte des bureaux sont
            publiés par la Commission électorale centrale dans les semaines précédant le scrutin.</p></div>
 
-      <div class="regle"><h3><span>8</span>Depuis l'étranger, c'est non</h3>
+      <div class="regle"><h3><span>9</span>Depuis l'étranger, c'est non</h3>
         <p>Israël n'organise pas le vote de ses ressortissants résidant hors du pays. Seules exceptions :
            les diplomates en poste, certains émissaires officiels et les marins. Un Israélien vivant à
            Paris, Bruxelles ou Montréal doit être physiquement en Israël le 27 octobre pour voter — et y
