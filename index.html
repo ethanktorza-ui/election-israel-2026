@@ -255,6 +255,22 @@ footer li{margin-bottom:7px}
 .ours a:hover{color:#e6e0d6}
 .ours{margin-top:50px;line-height:1.9;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.06em;color:#7d786f}
 
+/* pages */
+[data-page]{display:none}
+[data-page].actif{display:block;animation:apparait .28s ease}
+@keyframes apparait{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.entete nav a.actif{color:var(--encre);border-bottom:2px solid var(--claret);padding-bottom:2px}
+.suite{border-top:1px solid var(--filet);margin-top:64px;padding:34px 0 0;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.suite a{
+  text-decoration:none;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--gris);display:block;
+}
+.suite a:hover{color:var(--encre)}
+.suite a b{display:block;font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;
+  letter-spacing:-.02em;text-transform:none;color:var(--encre);margin-top:8px}
+.suite .droite{text-align:right;margin-left:auto}
+@media (max-width:600px){.suite a b{font-size:21px}.suite{margin-top:44px;padding-top:26px}}
+
 /* téléphone */
 @media (max-width:820px){
   body{overflow-x:clip}
@@ -367,6 +383,7 @@ footer li{margin-bottom:7px}
   <div class="entete-in">
     <div class="entete-titre">Le scrutin du 27 octobre</div>
     <nav>
+      <a href="#accueil">Accueil</a>
       <a href="#systeme">Le système</a>
       <a href="#partis">Les partis</a>
       <a href="#alliances">Alliances</a>
@@ -379,7 +396,7 @@ footer li{margin-bottom:7px}
   </div>
 </div>
 
-<header class="une">
+<header class="une" id="accueil" data-page>
   <div class="wrap">
     <p class="label kicker">Élections à la Knesset · Guide francophone</p>
     <h1>120 sièges à la Knesset.<br>Il en faut <em>61</em> pour gouverner.</h1>
@@ -407,7 +424,7 @@ footer li{margin-bottom:7px}
 </header>
 
 <!-- ══════════ SYSTÈME ══════════ -->
-<section id="systeme">
+<section data-page id="systeme">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Le système</span>
@@ -473,7 +490,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ PARTIS ══════════ -->
-<section id="partis" class="creux">
+<section data-page id="partis" class="creux">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Les partis</span>
@@ -513,7 +530,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ ALLIANCES ══════════ -->
-<section id="alliances">
+<section data-page id="alliances">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Les alliances</span>
@@ -688,7 +705,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ QUESTIONNAIRE ══════════ -->
-<section id="questionnaire" class="creux">
+<section data-page id="questionnaire" class="creux">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Le questionnaire</span>
@@ -705,7 +722,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ EMPLOIS ══════════ -->
-<section id="emplois">
+<section data-page id="emplois">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Travailler</span>
@@ -776,7 +793,7 @@ footer li{margin-bottom:7px}
 </section>
 
 <!-- ══════════ VOTER ══════════ -->
-<section id="voter" class="creux">
+<section data-page id="voter" class="creux">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">Voter</span>
@@ -841,7 +858,7 @@ footer li{margin-bottom:7px}
 
 
 <!-- ══════════ MÉTHODE ET MENTIONS ══════════ -->
-<section id="methode">
+<section data-page id="methode">
   <div class="wrap">
     <div class="sec-tete">
       <span class="label">La méthode</span>
@@ -1303,6 +1320,29 @@ const QUESTIONS=[
   n:"Sujet explosif : il touche au modèle des familles harédies, dont une large part des hommes étudient à plein temps.",
   pos:{likoud:0,otzma:0,tsionout:1,shas:2,yahadout:2,beyahad:-2,yashar:-1,beitenou:-2,democrates:1,hadash:1,raam:1,bayit:-1,amkha:null}}
 ];
+
+/* ═══ pages ═══ */
+const PAGES=[["accueil","Accueil"],["systeme","Le système"],["partis","Les partis"],
+  ["alliances","Les alliances"],["questionnaire","Le questionnaire"],["emplois","Travailler"],
+  ["voter","Voter"],["methode","Méthode et sources"]];
+
+function afficher(id,remonter){
+  if(!PAGES.some(p=>p[0]===id)) id="accueil";
+  document.querySelectorAll("[data-page]").forEach(el=>el.classList.toggle("actif",el.id===id));
+  document.querySelectorAll(".entete nav a").forEach(a=>a.classList.toggle("actif",a.getAttribute("href")==="#"+id));
+  const i=PAGES.findIndex(p=>p[0]===id);
+  document.querySelectorAll(".suite").forEach(el=>el.remove());
+  const bloc=document.createElement("div");
+  bloc.className="suite";
+  bloc.innerHTML =
+    (i>0 ? `<a href="#${PAGES[i-1][0]}">← Précédent<b>${PAGES[i-1][1]}</b></a>` : "<span></span>")+
+    (i<PAGES.length-1 ? `<a class="droite" href="#${PAGES[i+1][0]}">Suivant →<b>${PAGES[i+1][1]}</b></a>` : "");
+  const cible=document.querySelector("#"+id+" .wrap:last-of-type")||document.getElementById(id);
+  cible.appendChild(bloc);
+  if(remonter) window.scrollTo({top:0,behavior:"instant"});
+}
+addEventListener("hashchange",()=>afficher(location.hash.slice(1),true));
+afficher(location.hash.slice(1)||"accueil",false);
 
 /* ═══ compte à rebours ═══ */
 (function(){

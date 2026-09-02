@@ -14,11 +14,18 @@ CE QU'IL FAUT FAIRE
   6. Bouton vert Commit changes
   7. Attendre 5 minutes
 
-VERIFIER
-  Barre de menu qui reste visible quand on defile
-  Nom hebreu a cote de chaque parti
-  Section Methode : bloc Droits d'usage
-  Pied de page avec liens et copyright
+NOUVEAU : LE SITE EST EN PAGES SEPAREES
+  8 pages : Accueil, Le systeme, Les partis, Les alliances,
+  Le questionnaire, Travailler, Voter, Methode et sources.
+  Un clic sur le menu change de page et remonte en haut.
+  Les boutons Precedent/Suivant du navigateur fonctionnent.
+  Chaque page se termine par un lien vers la suivante.
+
+  Adresses directes a partager :
+    electionisrael2026.com/#partis
+    electionisrael2026.com/#questionnaire
+    electionisrael2026.com/#alliances
+    electionisrael2026.com/#voter
 
 RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS
