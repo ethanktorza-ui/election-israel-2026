@@ -1,18 +1,20 @@
-GUIDE ELECTIONS ISRAEL 2026 — MISE EN LIGNE
-
-CE DOSSIER
-  index.html   le site entier
-  apercu.png   l'image affichee quand on partage le lien
-  A-LIRE.txt   ce fichier, a ne PAS envoyer sur GitHub
+GUIDE ELECTIONS ISRAEL 2026
 
 ENVOI SUR GITHUB
   github.com, depot election-israel-2026, branche main
   Add file > Upload files > glisser index.html ET apercu.png
-  Message : Mise a jour > Commit changes > attendre 5 minutes
+  Commit changes, puis attendre 5 minutes
+
+QUESTIONNAIRE : 28 QUESTIONS
+  Chaque parti sort 1er a 100% quand on repond comme lui.
+  Les 28 questions discriminent (ecart d'au moins 3 points sur 4).
+  Amkha Israel (Winter) exclu : pas de programme publie.
+  HaTsionout HaDatit-Zehout : positions de Smotrich, questions
+  neutralisees la ou Feiglin defend l'inverse.
 
 A FAIRE APRES LE 8 SEPTEMBRE
   Remplacer les lettres de bulletin (page Voter, point 7).
-  Reecrire la section Alliances : les listes seront definitives.
+  Reecrire la section Alliances.
 
 RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS

@@ -757,7 +757,7 @@ footer li{margin-bottom:7px}
     <div class="sec-tete">
       <span class="label">Le questionnaire</span>
       <h2>De quelles idées êtes-vous le plus proche</h2>
-      <p>Vingt-cinq propositions concrètes, choisies parce qu'elles séparent réellement les partis. Chacune
+      <p>Vingt-huit propositions concrètes, choisies parce qu'elles séparent réellement les partis. Chacune
          correspond à un arbitrage débattu à la Knesset, pas à un slogan, et toutes comptent à égalité.
          Rien n'est transmis nulle part : le calcul se fait dans votre navigateur.</p>
     </div>
@@ -995,7 +995,7 @@ footer li{margin-bottom:7px}
         </div>
         <div class="bloc">
           <h3>Comment les positions ont été établies</h3>
-          <p>Les positions attribuées à chaque parti sur les vingt-cinq propositions du questionnaire
+          <p>Les positions attribuées à chaque parti sur les vingt-huit propositions du questionnaire
              proviennent de trois sources : les programmes publiés, les déclarations publiques de leurs
              dirigeants, et leurs votes à la Knesset. Lorsqu'un parti n'a pas de position identifiable sur
              un sujet, la question est neutralisée pour lui plutôt que de lui prêter une opinion.</p>
@@ -1074,7 +1074,7 @@ footer li{margin-bottom:7px}
       <div>
         <h3>Ce qu'il n'est pas</h3>
         <p>Ni un outil de prédiction, ni une recommandation de vote. Le pourcentage de correspondance
-           mesure une proximité sur vingt-cinq sujets ; il ignore volontairement la confiance accordée à un
+           mesure une proximité sur vingt-huit sujets ; il ignore volontairement la confiance accordée à un
            dirigeant, la compétence supposée et le calcul stratégique, qui pèsent souvent autant.</p>
       </div>
       <div>
@@ -1297,10 +1297,6 @@ const QUESTIONS=[
   n:"Le désaccord ne porte pas sur le principe d'une enquête, mais sur qui en nomme les membres : le pouvoir judiciaire ou le pouvoir politique.",
   pos:{likoud:-2,otzma:-2,tsionout:-2,shas:-1,yahadout:-1,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:2,raam:2,bayit:2,amkha:null}},
 
- {t:"Netanyahou et le 7 octobre",q:"Un Premier ministre poursuivi pénalement doit pouvoir rester en fonction pendant son procès.",
-  n:"Netanyahou est jugé pour corruption, fraude et abus de confiance depuis 2020. Aucune loi ne l'oblige à démissionner ; plusieurs partis veulent en adopter une.",
-  pos:{likoud:2,otzma:1,tsionout:1,shas:1,yahadout:0,beyahad:-2,yashar:-2,beitenou:-2,democrates:-2,hadash:-2,raam:-2,bayit:-1,amkha:null}},
-
  {t:"Netanyahou et le 7 octobre",q:"La durée du mandat de Premier ministre doit être limitée à huit ans.",
   n:"Mesure portée par Bennett et reprise par une grande partie de l'opposition. Le Likoud y est hostile.",
   pos:{likoud:-2,otzma:-1,tsionout:-1,shas:-1,yahadout:-1,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:1,raam:1,bayit:1,amkha:null}},
@@ -1309,7 +1305,7 @@ const QUESTIONS=[
   n:"C'est la clause dérogatoire, cœur de la réforme judiciaire de 2023. Elle rendrait le contrôle de constitutionnalité surmontable par une majorité simple.",
   pos:{likoud:2,otzma:2,tsionout:2,shas:2,yahadout:2,beyahad:-2,yashar:-2,beitenou:-1,democrates:-2,hadash:-2,raam:-2,bayit:-2,amkha:null}},
 
- {t:"Justice et institutions",q:"Le conseiller juridique du gouvernement doit être nommé par le gouvernement lui-même, et ses avis ne doivent plus le lier.",
+ {t:"Justice et institutions",q:"Le conseiller juridique du gouvernement doit être nommé par le gouvernement lui-même.",
   n:"Aujourd'hui nommé par une commission indépendante, il peut bloquer une décision jugée illégale. Sa révocation a provoqué une crise institutionnelle majeure.",
   pos:{likoud:2,otzma:2,tsionout:2,shas:1,yahadout:1,beyahad:-2,yashar:-2,beitenou:-1,democrates:-2,hadash:-2,raam:-2,bayit:-2,amkha:null}},
 
@@ -1317,7 +1313,7 @@ const QUESTIONS=[
   n:"Le pays n'en a jamais eu. Plusieurs partis d'opposition en font leur réponse structurelle aux crises de 2023 et 2025.",
   pos:{likoud:-1,otzma:-1,tsionout:-2,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:1,hadash:null,raam:null,bayit:1,amkha:null}},
 
- {t:"Religion et État",q:"Les étudiants de yeshiva doivent être enrôlés comme les autres, l'exemption étant plafonnée à une petite minorité.",
+ {t:"Religion et État",q:"Les étudiants de yeshiva doivent être enrôlés dans l'armée comme les autres citoyens.",
   n:"Le sujet qui a fait tomber la coalition en juillet 2025. Eisenkot propose un plafond d'environ 3 % ; les partis harédim refusent tout plafond.",
   pos:{likoud:-1,otzma:0,tsionout:-1,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:2,hadash:null,raam:null,bayit:2,amkha:null}},
 
@@ -1341,8 +1337,8 @@ const QUESTIONS=[
   n:"L'alternative au tout-militaire. Elle est rejetée à la fois par les partis harédim et par une partie des partis arabes, pour des raisons opposées.",
   pos:{likoud:0,otzma:0,tsionout:-1,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:1,hadash:-2,raam:-1,bayit:2,amkha:null}},
 
- {t:"Guerre et Palestiniens",q:"Israël doit accepter la création d'un État palestinien démilitarisé dans le cadre d'un accord régional incluant l'Arabie saoudite.",
-  n:"La formulation compte : c'est celle qui circule dans les discussions de normalisation. Elle sépare la gauche et les partis arabes de tout le reste.",
+ {t:"Guerre et Palestiniens",q:"Israël doit accepter la création d'un État palestinien démilitarisé.",
+  n:"La question de fond, indépendamment du calendrier ou du cadre diplomatique. Elle sépare la gauche et les partis arabes de tout le reste.",
   pos:{likoud:-2,otzma:-2,tsionout:-2,shas:-1,yahadout:null,beyahad:-2,yashar:-1,beitenou:-1,democrates:2,hadash:2,raam:2,bayit:-1,amkha:null}},
 
  {t:"Guerre et Palestiniens",q:"Israël doit appliquer sa souveraineté sur la Cisjordanie, même sans accord ni contrepartie.",
@@ -1353,8 +1349,8 @@ const QUESTIONS=[
   n:"Elles ont été démantelées en 2005. Leur rétablissement est une revendication centrale de l'extrême droite depuis le 7 octobre.",
   pos:{likoud:0,otzma:2,tsionout:2,shas:0,yahadout:null,beyahad:-2,yashar:-2,beitenou:-1,democrates:-2,hadash:-2,raam:-2,bayit:-2,amkha:null}},
 
- {t:"Guerre et Palestiniens",q:"Israël doit conserver le contrôle militaire de Gaza plutôt que d'en confier l'administration à une force arabe ou internationale.",
-  n:"C'est l'arbitrage central de l'après-guerre : occupation durable, avec son coût humain et budgétaire, ou délégation à des tiers.",
+ {t:"Guerre et Palestiniens",q:"Israël doit maintenir une présence militaire permanente dans la bande de Gaza.",
+  n:"L'arbitrage central de l'après-guerre. L'alternative est une administration confiée à une force arabe ou internationale.",
   pos:{likoud:1,otzma:2,tsionout:2,shas:0,yahadout:null,beyahad:1,yashar:0,beitenou:1,democrates:-2,hadash:-2,raam:-2,bayit:1,amkha:null}},
 
  {t:"Guerre et Palestiniens",q:"La peine de mort doit s'appliquer aux auteurs d'attentats.",
@@ -1365,9 +1361,9 @@ const QUESTIONS=[
   n:"Question décisive pour l'arithmétique : sans les onze sièges arabes, l'opposition n'atteint pas soixante et un. Raam l'a déjà fait en 2021.",
   pos:{likoud:-2,otzma:-2,tsionout:-2,shas:-1,yahadout:-1,beyahad:0,yashar:0,beitenou:-2,democrates:2,hadash:1,raam:2,bayit:-2,amkha:null}},
 
- {t:"Société et citoyenneté",q:"Les partis harédim ne doivent pas faire partie du prochain gouvernement.",
-  n:"L'exclusion symétrique de la précédente. Elle rend, elle aussi, l'arithmétique très difficile.",
-  pos:{likoud:-2,otzma:-1,tsionout:-1,shas:-2,yahadout:-2,beyahad:1,yashar:1,beitenou:2,democrates:1,hadash:null,raam:null,bayit:2,amkha:null}},
+ {t:"Société et citoyenneté",q:"L'entrée des partis harédim au gouvernement doit être conditionnée à l'adoption d'une loi de conscription.",
+  n:"Les partis harédim gouvernent presque sans interruption depuis des décennies : la question n'est pas de savoir s'ils peuvent entrer, mais à quel prix. Plusieurs formations laïques posent désormais cette condition explicite.",
+  pos:{likoud:-1,otzma:0,tsionout:-1,shas:-2,yahadout:-2,beyahad:2,yashar:2,beitenou:2,democrates:1,hadash:null,raam:null,bayit:2,amkha:null}},
 
  {t:"Société et citoyenneté",q:"La lutte contre la criminalité organisée dans les localités arabes doit faire l'objet d'un plan pluriannuel doté d'un budget dédié.",
   n:"Plusieurs centaines d'homicides par an dans une population qui représente environ un cinquième du pays. Le sujet numéro un de l'électorat arabe.",
@@ -1377,17 +1373,33 @@ const QUESTIONS=[
   n:"Concerne directement les candidats à l'aliya venus de France, de Russie et d'Ukraine. Les partis religieux veulent la supprimer.",
   pos:{likoud:0,otzma:-1,tsionout:-2,shas:-2,yahadout:-2,beyahad:1,yashar:2,beitenou:2,democrates:1,hadash:null,raam:null,bayit:1,amkha:null}},
 
+ {t:"Guerre et Palestiniens",q:"Israël doit accepter le plan américain pour Gaza, y compris ses dispositions sur le désarmement du Hamas et l'administration du territoire.",
+  n:"Le Hamas a accepté ce plan ; Netanyahou l'a rejeté publiquement au bout d'une semaine, pour ne pas rompre avec ses alliés d'extrême droite. C'est le clivage le plus actif de la campagne.",
+  pos:{likoud:-1,otzma:-2,tsionout:-2,shas:0,yahadout:null,beyahad:1,yashar:1,beitenou:0,democrates:2,hadash:1,raam:2,bayit:1,amkha:null}},
+
+ {t:"Guerre et Palestiniens",q:"Israël doit conserver la liberté de frapper l'Iran par lui-même, sans attendre l'accord de Washington.",
+  n:"Deux campagnes ont été menées contre l'Iran en 2025 et 2026. L'autonomie stratégique face au principal allié est un clivage réel.",
+  pos:{likoud:2,otzma:2,tsionout:2,shas:1,yahadout:null,beyahad:1,yashar:1,beitenou:2,democrates:-1,hadash:-2,raam:-2,bayit:1,amkha:null}},
+
+ {t:"Économie",q:"Face au prix du logement, l'État doit encadrer les loyers et développer un parc locatif public, plutôt que de s'en remettre au marché.",
+  n:"Le premier sujet de préoccupation des moins de quarante ans. Tous les partis promettent des prix plus bas ; ils divergent sur le moyen — intervention publique ou libération de l'offre privée.",
+  pos:{likoud:-2,otzma:0,tsionout:-1,shas:1,yahadout:1,beyahad:-1,yashar:0,beitenou:-2,democrates:2,hadash:2,raam:1,bayit:-1,amkha:null}},
+
+ {t:"Religion et État",q:"L'État doit pouvoir financer des services séparés entre hommes et femmes — plages, horaires de transport, cours, cérémonies — pour les publics qui le demandent.",
+  n:"Personne ne propose une séparation générale. Le débat porte sur l'argent public : faut-il financer des services séparés pour les communautés qui le souhaitent, ou l'égalité d'accès l'interdit-elle ? La question revient devant les tribunaux à chaque législature.",
+  pos:{likoud:1,otzma:1,tsionout:1,shas:2,yahadout:2,beyahad:-2,yashar:-2,beitenou:-2,democrates:-2,hadash:-1,raam:null,bayit:-1,amkha:null}},
+
  {t:"Économie",q:"Il faut faire baisser les prix en ouvrant massivement les importations, même au détriment des producteurs israéliens.",
-  n:"L'arbitrage classique du coût de la vie : le consommateur contre l'agriculture et l'industrie locales.",
-  pos:{likoud:1,otzma:0,tsionout:-1,shas:-1,yahadout:-1,beyahad:2,yashar:1,beitenou:2,democrates:0,hadash:-1,raam:0,bayit:1,amkha:null}},
+  n:"L'arbitrage classique du coût de la vie : le consommateur contre l'agriculture et l'industrie locales. HaTsionout HaDatit-Zehout est neutralisée : Smotrich protège les producteurs, Feiglin veut tout ouvrir.",
+  pos:{likoud:1,otzma:0,tsionout:null,shas:-1,yahadout:-1,beyahad:2,yashar:1,beitenou:2,democrates:0,hadash:-1,raam:0,bayit:1,amkha:null}},
 
  {t:"Économie",q:"L'État doit investir davantage dans la santé, l'éducation et le logement, quitte à augmenter les impôts.",
   n:"Question transversale : elle sépare les libéraux des sociaux, et ne recoupe pas la division entre blocs.",
   pos:{likoud:-1,otzma:0,tsionout:-1,shas:1,yahadout:1,beyahad:0,yashar:0,beitenou:-1,democrates:2,hadash:2,raam:1,bayit:0,amkha:null}},
 
  {t:"Économie",q:"Les allocations familiales doivent être versées sans condition d'activité professionnelle des parents.",
-  n:"Sujet explosif : il touche au modèle des familles harédies, dont une large part des hommes étudient à plein temps.",
-  pos:{likoud:0,otzma:0,tsionout:1,shas:2,yahadout:2,beyahad:-2,yashar:-1,beitenou:-2,democrates:1,hadash:1,raam:1,bayit:-1,amkha:null}}
+  n:"Sujet explosif : il touche au modèle des familles harédies, dont une large part des hommes étudient à plein temps. HaTsionout HaDatit-Zehout est neutralisée : Smotrich y est favorable, Feiglin hostile par principe libertarien.",
+  pos:{likoud:0,otzma:0,tsionout:null,shas:2,yahadout:2,beyahad:-2,yashar:-1,beitenou:-2,democrates:1,hadash:1,raam:1,bayit:-1,amkha:null}}
 ];
 
 /* ═══ pages ═══ */
@@ -1602,7 +1614,10 @@ function resultats(){
       ${pour.length?`<span class="label">Vous rejoignez ${top.p.nom} sur</span><ul>${pour.map(a=>`<li>${a.q}</li>`).join("")}</ul>`:""}
       ${contre.length?`<span class="label">Vous vous en éloignez sur</span><ul>${contre.map(a=>`<li>${a.q}</li>`).join("")}</ul>`:""}
       <span class="label">Une réserve</span>
-      <p>Ce pourcentage mesure une proximité sur vingt-cinq sujets, rien de plus. Il ne dit rien de la
+      <p>Un cas particulier : HaTsionout HaDatit-Zehout est une alliance technique entre deux partis qui
+      conservent chacun leur programme. Les positions retenues sont celles de Smotrich, tête de liste ;
+      les questions où Feiglin défend l'inverse ont été neutralisées.</p>
+      <p>Ce pourcentage mesure une proximité sur vingt-huit sujets, rien de plus. Il ne dit rien de la
       confiance que vous accordez à un dirigeant, ni du calcul stratégique : voter pour une petite liste
       qui échoue à 3,25 % revient à perdre sa voix. Un score élevé pour un parti qui refuse de siéger avec
       ceux que vous soutenez par ailleurs mérite lui aussi réflexion. Enfin, plusieurs listes peuvent
