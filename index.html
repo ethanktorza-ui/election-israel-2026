@@ -124,6 +124,7 @@ section.creux{background:var(--papier-creux)}
 .ligne-nom{font-family:'Instrument Serif',serif;font-size:27px;letter-spacing:-.015em}
 .ligne-nom i{display:block;font-family:'Newsreader',serif;font-style:italic;font-size:15.5px;color:var(--gris);margin-top:4px;letter-spacing:0}
 .ligne-etiq{font-size:15.5px;color:var(--gris);line-height:1.4}
+.he{font-family:'Instrument Sans',sans-serif;font-size:.62em;color:var(--gris);letter-spacing:0;white-space:nowrap;unicode-bidi:isolate}
 .cta{display:block;margin-top:10px;font-family:'Instrument Sans',sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--claret)}
 .cta .c2{display:none}
 .ligne[data-on="1"] .cta .c1{display:none}
@@ -250,11 +251,13 @@ footer h3{font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:60
 .pied{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:44px}
 footer ul{margin:0;padding-left:19px}
 footer li{margin-bottom:7px}
-.ours{margin-top:50px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.06em;color:#7d786f}
+.ours a{color:#9a958d;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2)}
+.ours a:hover{color:#e6e0d6}
+.ours{margin-top:50px;line-height:1.9;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-family:'Instrument Sans',sans-serif;font-size:11.5px;letter-spacing:.06em;color:#7d786f}
 
 /* téléphone */
 @media (max-width:820px){
-  html,body{overflow-x:hidden}
+  body{overflow-x:clip}
   body{font-size:17px}
   .wrap{padding:0 20px}
   .une{padding:42px 0 0}
@@ -446,7 +449,7 @@ footer li{margin-bottom:7px}
 
       <div class="regle"><h3><span>VI</span>Tout se joue dans la coalition</h3>
         <p>Aucun parti n'a jamais obtenu soixante et un sièges seul. Le futur Premier ministre doit donc
-           acheter le soutien des autres avec des ministères, des présidences de commissions et des
+           négocier le soutien des autres contre des ministères, des présidences de commissions et des
            engagements budgétaires. Les véritables arbitrages du mandat se décident là.</p></div>
 
       <div class="regle"><h3><span>VII</span>Un gouvernement peut tomber à tout moment</h3>
@@ -493,6 +496,19 @@ footer li{margin-bottom:7px}
       <button class="filtre" data-f="seuil" aria-pressed="false">Autour du seuil</button>
     </div>
     <div class="liste" id="liste"></div>
+
+    <div class="avert" style="margin-top:44px;margin-bottom:0">
+      <span class="label" style="display:block;margin-bottom:10px">Signaler une erreur</span>
+      <p>Ces fiches sont des synthèses rédigées à partir de programmes, de déclarations publiques et de
+         votes à la Knesset. Ce ne sont pas des citations, et une synthèse peut se tromper : position mal
+         restituée, nuance perdue, information devenue caduque depuis la dernière mise à jour.</p>
+      <p>Si vous constatez une erreur — que vous soyez électeur, militant, candidat ou représentant d'une
+         formation —, écrivez à <a href="mailto:contact.electionisrael2026@gmail.com">contact.electionisrael2026@gmail.com</a> en indiquant le parti, le passage concerné et
+         la source qui l'infirme. Toute erreur avérée est corrigée sous quarante-huit heures, et la date
+         de mise à jour du site en porte la trace.</p>
+      <p>Un parti qui estime que sa position a été déformée peut demander la publication de sa propre
+         formulation. Elle sera reprise telle quelle dans sa fiche, présentée comme émanant de lui.</p>
+    </div>
   </div>
 </section>
 
@@ -554,9 +570,9 @@ footer li{margin-bottom:7px}
            ainsi que les huitième et dixième. L'objectif est explicite — empêcher que les voix de la droite
            idéologique se perdent sous le seuil, comme celles de Zehut en 2019.</p>
           <p>Smotrich présente l'accord comme une première étape et appelle d'autres formations à s'y
-           joindre. La veille encore, Netanyahou avait publiquement supplié Ben Gvir et Smotrich de
-           s'unir ; Ben Gvir a refusé net, accusant le Premier ministre d'avoir mis en scène cet appel
-           pour faire baisser les exigences de Feiglin dans la négociation parallèle.</p></div>
+           joindre. La veille encore, Netanyahou avait publiquement appelé Ben Gvir et Smotrich à
+           s'unir ; Ben Gvir a refusé, déclarant que cet appel visait selon lui à peser sur les exigences
+           de Feiglin dans la négociation parallèle.</p></div>
       </div>
       <div class="cas">
         <div><h4>HaDemokratim</h4><p class="qui">Travaillistes et Meretz</p>
@@ -591,7 +607,7 @@ footer li{margin-bottom:7px}
       <div class="cas">
         <div><h4>Ahdout, « Unité »</h4><p class="qui">Gilad Erdan et Yuli Edelstein</p>
           <span class="jauge-etat encours">Lancé le 6 août, sans accord</span></div>
-        <div><p>Deux figures historiques du Likoud ont quitté le navire pour fonder une liste de droite
+        <div><p>Deux figures historiques du Likoud ont quitté le parti pour fonder une liste de droite
            concurrente. Aucun sondage ne les place au-dessus du seuil. Edelstein a lui-même reconnu
            publiquement que les négociations avec les autres petits partis ne commenceraient qu'au dernier
            moment, quand la pression deviendra intenable.</p></div>
@@ -599,7 +615,7 @@ footer li{margin-bottom:7px}
       <div class="cas">
         <div><h4>Kahol Lavan</h4><p class="qui">Benny Gantz</p>
           <span class="jauge-etat risque">Sous le seuil, en discussions</span></div>
-        <div><p>L'ancien chef d'état-major, un temps principal rival de Netanyahou, s'effondre dans les
+        <div><p>L'ancien chef d'état-major, un temps principal rival de Netanyahou, recule fortement dans les
            sondages depuis le départ d'Eisenkot. Il mène des discussions parallèles avec plusieurs figures,
            dont son ancien partenaire Chili Tropper. Publiquement, il continue d'exiger la première place
            de toute liste commune, tout en laissant entendre que son ego ne trancherait pas la question.</p></div>
@@ -884,9 +900,12 @@ footer li{margin-bottom:7px}
           <h3>Indépendance</h3>
           <p>Ce site n'est affilié à aucun parti, aucun candidat, aucun mouvement et aucune organisation
              active dans la campagne. Il n'a reçu aucun financement, aucune contrepartie et aucune
-             contribution en nature. Aucun espace publicitaire n'y est vendu. Sa publication ne fait
-             l'objet d'aucun achat de promotion payante, ce qui le place hors du champ des annonces
-             électorales au sens de la loi.</p>
+             contribution en nature d'une formation politique ou d'une personne liée à la campagne.</p>
+          <p>Des espaces publicitaires peuvent être affichés. Ils sont commercialisés par un prestataire
+             indépendant, sans lien avec le contenu éditorial : aucun annonceur ne choisit, ne relit ni
+             n'influence ce qui est écrit ici, et aucune publicité à caractère politique ou électoral n'y
+             est acceptée. Le contenu du site ne fait par ailleurs l'objet d'aucun achat de promotion
+             payante.</p>
         </div>
         <div class="bloc">
           <h3>Comment les positions ont été établies</h3>
@@ -895,7 +914,9 @@ footer li{margin-bottom:7px}
              dirigeants, et leurs votes à la Knesset. Lorsqu'un parti n'a pas de position identifiable sur
              un sujet, la question est neutralisée pour lui plutôt que de lui prêter une opinion.</p>
           <p>Ces attributions sont des synthèses, pas des citations. Un parti peut nuancer, préciser ou
-             changer de position. Toute demande de rectification peut être adressée à <a href="mailto:contact.electionisrael2026@gmail.com">contact.electionisrael2026@gmail.com</a> et sera traitée sous quarante-huit heures.</p>
+             changer de position. Toute demande de rectification peut être adressée à <a href="mailto:contact.electionisrael2026@gmail.com">contact.electionisrael2026@gmail.com</a> et sera traitée sous
+             quarante-huit heures. Une formation qui conteste la restitution de sa position peut obtenir la
+             publication de sa propre formulation, reprise telle quelle et attribuée à elle.</p>
         </div>
         <div class="bloc">
           <h3>Contenus générés</h3>
@@ -907,11 +928,15 @@ footer li{margin-bottom:7px}
       <div>
         <div class="bloc">
           <h3>Vos données</h3>
-          <p>Ce site ne dépose aucun cookie, n'utilise aucun outil de mesure d'audience et ne transmet
-             aucune donnée à un tiers. Le questionnaire s'exécute entièrement dans votre navigateur :
-             vos réponses ne quittent jamais votre appareil et ne sont conservées nulle part, pas même
-             localement. Les polices de caractères sont intégrées au fichier, de sorte qu'aucune requête
-             n'est adressée à un serveur extérieur lors de votre visite.</p>
+          <p>Le site lui-même ne collecte rien. Le questionnaire s'exécute entièrement dans votre
+             navigateur : vos réponses ne quittent jamais votre appareil et ne sont conservées nulle part,
+             pas même localement. Les polices de caractères sont intégrées au fichier, sans requête vers un
+             serveur extérieur. Aucun formulaire, aucun compte, aucune inscription.</p>
+          <p>Si des espaces publicitaires sont affichés, ils proviennent d'un prestataire tiers, susceptible
+             de déposer des cookies et de mesurer l'audience selon ses propres conditions. Cette collecte
+             lui appartient et échappe à l'éditeur du site.</p>
+          <p>Comme tout site, celui-ci est servi par un hébergeur qui journalise les connexions, adresses IP
+             comprises. L'éditeur n'y a pas accès et n'en fait aucun usage.</p>
         </div>
         <div class="bloc">
           <h3>Accessibilité</h3>
@@ -923,6 +948,21 @@ footer li{margin-bottom:7px}
           <p>Limites connues : le graphique de répartition des sièges n'a pas encore d'équivalent textuel
              complet, et le tableau des emplois reste dense sur très petit écran. Si vous rencontrez une difficulté d'accès, signalez-la à <a href="mailto:contact.electionisrael2026@gmail.com">contact.electionisrael2026@gmail.com</a> : une réponse vous sera apportée et le correctif appliqué dès que possible.</p>
         </div>
+        <div class="bloc">
+          <h3>Droits d'usage</h3>
+          <p>L'ensemble des textes, de la mise en page et de l'architecture de ce site est protégé par le
+             droit d'auteur. © 2026, tous droits réservés.</p>
+          <p>Sont libres et encouragés : le partage du lien, la citation d'un extrait bref accompagné de
+             la mention du site, et l'usage personnel ou pédagogique.</p>
+          <p>Sont soumis à autorisation écrite préalable : la reproduction intégrale ou substantielle de
+             tout ou partie des textes, leur republication sur un autre site ou support, leur traduction,
+             leur adaptation, ainsi que toute exploitation commerciale. L'extraction automatisée du contenu,
+             y compris à des fins d'entraînement de modèles, est également soumise à autorisation.</p>
+          <p>Une reprise sans mention de la source, ou présentée de manière à laisser croire à une autre
+             origine, engage la responsabilité de son auteur. Les demandes d'autorisation s'adressent à
+             <a href="mailto:contact.electionisrael2026@gmail.com">contact.electionisrael2026@gmail.com</a> et reçoivent en général une réponse favorable.</p>
+        </div>
+
         <div class="bloc">
           <h3>Sources</h3>
           <p>Commission électorale centrale pour les procédures, le calendrier et les recrutements ;
@@ -960,14 +1000,19 @@ footer li{margin-bottom:7px}
         </ul>
       </div>
     </div>
-    <div class="ours">Guide francophone indépendant · Sans affiliation ni financement partisan</div>
+    <div class="ours">
+      <a href="#methode">Méthode et sources</a> · <a href="#methode">Déclaration d'accessibilité</a> ·
+      <a href="#methode">Données personnelles</a> · <a href="#methode">Signaler une erreur</a><br><br>
+      Guide francophone indépendant · Sans affiliation ni financement partisan<br>
+      © 2026 electionisrael2026.com — Tous droits réservés. Reproduction et republication soumises à autorisation ; partage du lien et citation courte avec mention de la source expressément autorisés.
+    </div>
   </div>
 </footer>
 
 <script>
 /* ═══ DONNÉES ═══ */
 const PARTIS=[
- {id:"likoud",nom:"Likoud",tr:"HaLikoud",chef:"Benjamin Netanyahou",bloc:"droite",couleur:"#1f3a5f",sieges:36,sondage:23,
+ {id:"likoud",he:"הליכוד",nom:"Likoud",tr:"HaLikoud",chef:"Benjamin Netanyahou",bloc:"droite",couleur:"#1f3a5f",sieges:36,sondage:23,
   etiq:"Droite nationaliste · au pouvoir depuis 2022",
   origine:"Fondé en 1973, le parti dominant de la droite israélienne. Netanyahou le dirige depuis 2005 et gouverne presque sans interruption depuis 2009. Le scrutin est largement un référendum sur sa personne.",
   electorat:"Classes populaires et moyennes des villes de la périphérie, électorat mizrahi, traditionalistes, une partie des habitants des implantations.",
@@ -981,7 +1026,7 @@ const PARTIS=[
   rouge:"Refuse tout gouvernement avec les partis arabes. A absorbé Nouvel Espoir de Gideon Saar.",
   axes:{netanyahou:"Le maintenir",conscription:"Compromis favorable aux harédim",justice:"Réforme et clause dérogatoire",palestiniens:"Refus d'un État"}},
 
- {id:"yashar",nom:"Yashar",tr:"« droit », « intègre »",chef:"Gadi Eisenkot",bloc:"opposition",couleur:"#8e2c3b",sieges:0,sondage:24,
+ {id:"yashar",he:"ישר",nom:"Yashar",tr:"« droit », « intègre »",chef:"Gadi Eisenkot",bloc:"opposition",couleur:"#8e2c3b",sieges:0,sondage:24,
   etiq:"Centre · sécurité · fondé en 2025",
   origine:"Créé en septembre 2025 par l'ancien chef d'état-major de Tsahal, après sa rupture avec Benny Gantz. En moins d'un an, il est devenu le principal rival de Netanyahou dans les sondages.",
   electorat:"Centre laïque, classes moyennes du centre du pays, réservistes, électeurs de droite déçus par la gestion de la guerre.",
@@ -995,7 +1040,7 @@ const PARTIS=[
   rouge:"Refuse de siéger sous Netanyahou. A décliné une fusion avec Bennett, se disant peu disposé à être numéro deux.",
   axes:{netanyahou:"Le remplacer",conscription:"Enrôlement quasi universel",justice:"Constitution écrite",palestiniens:"Prudent, pas d'État à court terme"}},
 
- {id:"beyahad",nom:"Beyahad",tr:"« ensemble » · fusion Bennett-Lapid",chef:"Naftali Bennett, avec Yaïr Lapid",bloc:"opposition",couleur:"#4e7c8a",sieges:24,sondage:15,
+ {id:"beyahad",he:"ביחד",nom:"Beyahad",tr:"« ensemble » · fusion Bennett-Lapid",chef:"Naftali Bennett, avec Yaïr Lapid",bloc:"opposition",couleur:"#4e7c8a",sieges:24,sondage:15,
   etiq:"Centre · fusion d'avril 2026",
   origine:"Fusion conclue en avril 2026 entre le parti de Naftali Bennett et Yesh Atid de Yaïr Lapid, sous la direction du premier. Les deux hommes avaient déjà gouverné ensemble en 2021 et 2022, dans la coalition la plus hétéroclite de l'histoire du pays.",
   electorat:"Centre et centre droit laïque, cadres, habitants de Tel-Aviv et de sa périphérie, une partie du sionisme religieux modéré.",
@@ -1009,7 +1054,7 @@ const PARTIS=[
   rouge:"Ne gouvernera pas avec Netanyahou. Conditionne toute alliance avec les harédim à l'adoption d'une loi de conscription.",
   axes:{netanyahou:"Le remplacer",conscription:"Enrôlement, budgets conditionnés",justice:"Constitution écrite",palestiniens:"Refus d'un État"}},
 
- {id:"democrates",nom:"HaDemokratim",tr:"les démocrates",chef:"Yaïr Golan",bloc:"opposition",couleur:"#9c5a7a",sieges:4,sondage:11,
+ {id:"democrates",he:"הדמוקרטים",nom:"HaDemokratim",tr:"les démocrates",chef:"Yaïr Golan",bloc:"opposition",couleur:"#9c5a7a",sieges:4,sondage:11,
   etiq:"Gauche sioniste · travaillistes et Meretz",
   origine:"Fusion du Parti travailliste et du Meretz, décidée en 2024 et ratifiée en 2026 par 97 000 adhérents, sous la direction de Yaïr Golan, ancien chef d'état-major adjoint.",
   electorat:"Gauche urbaine et laïque, milieux universitaires et associatifs, kibboutzim, électeurs arabes favorables à une liste judéo-arabe.",
@@ -1023,7 +1068,7 @@ const PARTIS=[
   rouge:"Le seul parti sioniste prêt à s'appuyer ouvertement sur les partis arabes pour constituer une majorité.",
   axes:{netanyahou:"Le remplacer",conscription:"Enrôlement",justice:"Défense des contre-pouvoirs",palestiniens:"Deux États"}},
 
- {id:"beitenou",nom:"Israël Beitenou",tr:"« Israël notre maison »",chef:"Avigdor Lieberman",bloc:"opposition",couleur:"#b08a3e",sieges:6,sondage:9,
+ {id:"beitenou",he:"ישראל ביתנו",nom:"Israël Beitenou",tr:"« Israël notre maison »",chef:"Avigdor Lieberman",bloc:"opposition",couleur:"#b08a3e",sieges:6,sondage:9,
   etiq:"Droite laïque · électorat russophone",
   origine:"Fondé en 1999 sur la base de l'immigration venue de l'ex-URSS, le parti s'est mué en fer de lance de la laïcité de droite. Lieberman est l'adversaire le plus constant de Netanyahou depuis 2019, tout en restant à sa droite sur la sécurité.",
   electorat:"Israéliens russophones, laïcs de droite, périphérie sud, électeurs excédés par le poids politique des partis religieux.",
@@ -1037,7 +1082,7 @@ const PARTIS=[
   rouge:"Refuse catégoriquement de siéger avec Netanyahou, avec les partis harédim et avec Raam. Une position qui réduit d'autant les combinaisons possibles.",
   axes:{netanyahou:"Le remplacer",conscription:"Enrôlement obligatoire",justice:"Constitution écrite",palestiniens:"Fermeté, séparation"}},
 
- {id:"otzma",nom:"Otzma Yehoudit",tr:"« puissance juive »",chef:"Itamar Ben Gvir",bloc:"droite",couleur:"#4a5a3a",sieges:6,sondage:7,
+ {id:"otzma",he:"עוצמה יהודית",nom:"Otzma Yehoudit",tr:"« puissance juive »",chef:"Itamar Ben Gvir",bloc:"droite",couleur:"#4a5a3a",sieges:6,sondage:7,
   etiq:"Extrême droite · héritage kahaniste",
   origine:"Héritier idéologique du parti Kach de Meïr Kahane, exclu de la Knesset pour incitation au racisme. Ben Gvir a fait passer ce courant de la marge au gouvernement : il est ministre de la Sécurité nationale depuis 2022.",
   electorat:"Jeunesse de la droite radicale, habitants des implantations les plus idéologiques, quartiers populaires, électorat sécuritaire radicalisé après le 7 octobre.",
@@ -1051,7 +1096,7 @@ const PARTIS=[
   rouge:"A rejeté publiquement, fin août 2026, l'appel de Netanyahou à fusionner avec le HaTsionout HaDatit, provoquant une passe d'armes avec le Likoud qui l'accuse de gaspiller des voix de droite. Se présente séparément pour la deuxième fois.",
   axes:{netanyahou:"Le soutenir, sous conditions",conscription:"Peu engagé",justice:"Clause dérogatoire",palestiniens:"Souveraineté totale"}},
 
- {id:"shas",nom:"Shas",tr:"Shass",chef:"Aryé Deri",bloc:"droite",couleur:"#6b5b8a",sieges:11,sondage:7,
+ {id:"shas",he:"ש״ס",nom:"Shas",tr:"Shass",chef:"Aryé Deri",bloc:"droite",couleur:"#6b5b8a",sieges:11,sondage:7,
   etiq:"Harédi séfarade · conservatisme social",
   origine:"Fondé en 1984 pour représenter les harédim séfarades et mizrahim, longtemps marginalisés par l'establishment ashkénaze. Le parti combine rigorisme religieux et discours social.",
   electorat:"Harédim séfarades, mais aussi un large électorat traditionaliste des villes de développement, souvent modeste.",
@@ -1065,7 +1110,7 @@ const PARTIS=[
   rouge:"Allié historique du Likoud. A quitté le gouvernement en juillet 2025 sur la conscription tout en restant dans la coalition. Une rupture avec Netanyahou reste peu probable.",
   axes:{netanyahou:"Le soutenir",conscription:"Exemption maintenue",justice:"Favorable à la réforme",palestiniens:"Position non centrale"}},
 
- {id:"yahadout",nom:"Yahadout HaTora",tr:"« judaïsme de la Torah »",chef:"Yitzhak Goldknopf et Moshé Gafni",bloc:"droite",couleur:"#3f6e6a",sieges:7,sondage:8,
+ {id:"yahadout",he:"יהדות התורה",nom:"Yahadout HaTora",tr:"« judaïsme de la Torah »",chef:"Yitzhak Goldknopf et Moshé Gafni",bloc:"droite",couleur:"#3f6e6a",sieges:7,sondage:8,
   etiq:"Harédi ashkénaze · parti strictement sectoriel",
   origine:"Alliance permanente entre le courant hassidique et le courant lituanien. Le parti ne prétend pas gouverner : il défend les intérêts d'une communauté et monnaie son soutien.",
   electorat:"Harédim ashkénazes de Jérusalem, Bnei Brak, Beitar Illit et Modiin Illit.",
@@ -1079,7 +1124,7 @@ const PARTIS=[
   rouge:"A quitté gouvernement et coalition en juillet 2025, provoquant la chute de la majorité. Gafni a déclaré la fin du bloc historique avec le Likoud, ce qui rouvre théoriquement toutes les options.",
   axes:{netanyahou:"Rupture déclarée",conscription:"Exemption absolue",justice:"Suit la coalition",palestiniens:"Pas de position"}},
 
- {id:"hadash",nom:"Hadash-Taal-Balad",tr:"HaReshima HaMeshoutefet, la liste commune reconstituée",chef:"Youssef Jabarine, Ahmad Tibi, Sami Abou Chehadé",bloc:"arabe",couleur:"#8a7a4a",sieges:5,sondage:7,
+ {id:"hadash",he:"חד״ש-תע״ל-בל״ד",nom:"Hadash-Taal-Balad",tr:"HaReshima HaMeshoutefet, la liste commune reconstituée",chef:"Youssef Jabarine, Ahmad Tibi, Sami Abou Chehadé",bloc:"arabe",couleur:"#8a7a4a",sieges:5,sondage:7,
   etiq:"Arabe et non sioniste · gauche",
   origine:"Accord signé en août 2026 entre Hadash, front judéo-arabe d'origine communiste, Taal, mouvement arabe pour le renouveau, et Balad, formation nationaliste arabe laïque. La séparation de 2022 avait fait perdre plusieurs sièges au camp arabe.",
   electorat:"Citoyens arabes d'Israël, en particulier en Galilée et dans le Triangle — la bande de localités arabes qui longe la Ligne verte, autour d'Oumm al-Fahm et de Taibe —, ainsi qu'une petite frange de la gauche juive radicale.",
@@ -1093,7 +1138,7 @@ const PARTIS=[
   rouge:"Hadash et Taal ont accepté par le passé de soutenir un gouvernement de l'extérieur, sans y entrer. Balad refuse toute participation.",
   axes:{netanyahou:"Le remplacer",conscription:"Opposé à la conscription",justice:"Défense des contre-pouvoirs",palestiniens:"Deux États"}},
 
- {id:"raam",nom:"Raam",tr:"Liste arabe unie",chef:"Mansour Abbas",bloc:"arabe",couleur:"#4a7a5e",sieges:5,sondage:4,
+ {id:"raam",he:"רע״ם",nom:"Raam",tr:"Liste arabe unie",chef:"Mansour Abbas",bloc:"arabe",couleur:"#4a7a5e",sieges:5,sondage:4,
   etiq:"Arabe · islamiste pragmatique",
   origine:"Issu de la branche méridionale du Mouvement islamique. En 2021, Abbas a rompu avec la doctrine du boycott en entrant dans la coalition Bennett-Lapid, première participation d'un parti arabe à un gouvernement israélien. Le parti s'est séparé du conseil de la Choura en décembre 2025 pour devenir une formation civile autonome.",
   electorat:"Électorat arabe religieux et conservateur, Bédouins du Néguev, villes du Sud et du Triangle, la région de localités arabes située le long de la Ligne verte.",
@@ -1107,7 +1152,7 @@ const PARTIS=[
   rouge:"Le seul parti arabe explicitement disponible pour entrer dans une coalition. Lieberman et l'essentiel de la droite le refusent.",
   axes:{netanyahou:"Le remplacer",conscription:"Service civil volontaire",justice:"Défense des contre-pouvoirs",palestiniens:"Deux États"}},
 
- {id:"tsionout",nom:"HaTsionout HaDatit-Zehout",tr:"alliance technique du sionisme religieux et de Zehout, « identité »",chef:"Betsalel Smotrich et Moshé Feiglin",bloc:"droite",couleur:"#7e8a5e",sieges:8,sondage:5,
+ {id:"tsionout",he:"הציונות הדתית-זהות",nom:"HaTsionout HaDatit-Zehout",tr:"alliance technique du sionisme religieux et de Zehout, « identité »",chef:"Betsalel Smotrich et Moshé Feiglin",bloc:"droite",couleur:"#7e8a5e",sieges:8,sondage:5,
   etiq:"Deux droites radicales sur un même bulletin · alliance du 1er septembre",
   origine:"Pilier de la coalition sortante, Smotrich a été ministre des Finances et ministre au sein du ministère de la Défense, avec autorité sur l'administration civile en Cisjordanie. Tombé sous le seuil dans plusieurs sondages d'août, il a signé le 1er septembre 2026 une alliance technique avec Zehout, le parti de Moshé Feiglin, ancien député du Likoud passé à la droite libertarienne et religieuse.",
   electorat:"Public du sionisme religieux idéologique, habitants des implantations, jeunesse des yeshivot nationales-religieuses. Zehout y ajoute un électorat très différent : libertariens hostiles à la bureaucratie, jeunes attirés par la légalisation du cannabis, militants du mont du Temple.",
@@ -1126,7 +1171,7 @@ const PARTIS=[
   rouge:"Alliance technique, et non fusion : chaque parti conserve son identité, son programme et ses principes, et les deux divergent nettement. Smotrich défend un État religieux interventionniste, Feiglin veut réduire l'État au minimum et légaliser le cannabis. Les deux hommes assument publiquement ces différences. Smotrich reste dans le bloc Netanyahou et appelle d'autres formations de droite à rejoindre la liste, Ofer Winter en tête. Ben Gvir a publiquement refusé de s'y joindre.",
   axes:{netanyahou:"Le soutenir",conscription:"Compromis favorable aux harédim",justice:"Clause dérogatoire",palestiniens:"Souveraineté totale"}},
 
- {id:"amkha",nom:"Amkha Israël",tr:"« le peuple d'Israël »",chef:"Ofer Winter",bloc:"seuil",couleur:"#6b6f77",sieges:0,sondage:4,
+ {id:"amkha",he:"עמך ישראל",nom:"Amkha Israël",tr:"« le peuple d'Israël »",chef:"Ofer Winter",bloc:"seuil",couleur:"#6b6f77",sieges:0,sondage:4,
   etiq:"Droite religieuse et sécuritaire · parti neuf",
   origine:"Fondé à l'été 2026 par le général de brigade de réserve Ofer Winter, ancien commandant de la brigade Givati, figure connue du public religieux pour sa lettre aux soldats avant l'opération de 2014. Son arrivée a bouleversé la droite religieuse : plusieurs sondages lui attribuent quatre à six sièges, pris pour l'essentiel au HaTsionout HaDatit, qu'il a fait basculer sous le seuil.",
   electorat:"Public du sionisme religieux, traditionalistes mizrahim et une partie de l'électorat harédi que Smotrich ne parvient pas à convaincre, selon l'entourage de Ben Gvir.",
@@ -1140,7 +1185,7 @@ const PARTIS=[
   rouge:"Ne soutiendra que Netanyahou. Smotrich et Feiglin l'invitent à rejoindre leur alliance technique avant le 8 septembre ; il n'a pas répondu favorablement à ce jour.",
   axes:{netanyahou:"Le soutenir",conscription:"Peu engagé",justice:"Peu engagé",palestiniens:"Fermeté"}},
 
- {id:"bayit",nom:"Bayit Tsioni",tr:"le foyer sioniste · HaMilouimnikim, les réservistes",chef:"Yoaz Hendel et Chili Tropper",bloc:"seuil",couleur:"#8a8078",sieges:0,sondage:3,
+ {id:"bayit",he:"בית ציוני",nom:"Bayit Tsioni",tr:"le foyer sioniste · HaMilouimnikim, les réservistes",chef:"Yoaz Hendel et Chili Tropper",bloc:"seuil",couleur:"#8a8078",sieges:0,sondage:3,
   etiq:"Centre droit · réservistes · autour du seuil",
   origine:"Né en juillet 2026 du ralliement de Chili Tropper, ancien ministre de la Culture, au parti des Réservistes de Yoaz Hendel. Représente ceux qui ont porté l'effort de guerre et se sentent politiquement orphelins.",
   electorat:"Réservistes, classes moyennes du centre, électeurs de droite laïque hostiles aux partis religieux.",
@@ -1298,7 +1343,7 @@ function rendre(f){
     <div class="ligne" data-on="0" id="ligne-${p.id}">
       <button class="ligne-tete" aria-expanded="false">
         <span class="pastille" style="background:${p.couleur}"></span>
-        <span class="ligne-nom">${p.nom}<i>${p.chef}</i><b class="cta"><span class="c1">Voir le programme →</span><span class="c2">Fermer ×</span></b></span>
+        <span class="ligne-nom">${p.nom} <span class="he" dir="rtl" lang="he">${p.he}</span><i>${p.chef}</i><b class="cta"><span class="c1">Voir le programme →</span><span class="c2">Fermer ×</span></b></span>
         <span class="ligne-etiq">${p.etiq}</span>
         <span class="ligne-mesure"><span class="mini"><i style="width:${p.sondage/24*100}%;background:${p.couleur}"></i></span><b>${p.sondage}</b></span>
         <span class="chev">▾</span>
