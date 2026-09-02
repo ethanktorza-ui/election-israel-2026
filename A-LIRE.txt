@@ -1,28 +1,17 @@
 GUIDE ELECTIONS ISRAEL 2026 — MISE EN LIGNE
 
-CE DOSSIER CONTIENT
+CE DOSSIER
   index.html   le site entier
   apercu.png   l'image affichee quand on partage le lien
   A-LIRE.txt   ce fichier, a ne PAS envoyer sur GitHub
 
 ENVOI SUR GITHUB
-  1. github.com, depot election-israel-2026, branche main
-  2. Add file > Upload files
-  3. Glisser index.html ET apercu.png
-  4. Message : Mise a jour
-  5. Commit changes, puis attendre 5 minutes
+  github.com, depot election-israel-2026, branche main
+  Add file > Upload files > glisser index.html ET apercu.png
+  Message : Mise a jour > Commit changes > attendre 5 minutes
 
-TESTE SUR 11 FORMATS
-  iPhone SE, Android compact, iPhone 14, Android large, iPhone Pro Max,
-  iPad mini, iPad Air, iPad Pro 11, iPad 1024, iPad paysage, bureau.
-  Aucun debordement, 35 a 66 caracteres par ligne partout.
-
-LE SITE EST EN 8 PAGES SEPAREES
-  Adresses directes : electionisrael2026.com/#partis, /#questionnaire, /#voter
-
-A FAIRE APRES LE 8 SEPTEMBRE — IMPORTANT
-  Remplacer les lettres de bulletin (page Voter, point 7) :
-  aujourd'hui ce sont celles de 2022, donnees a titre d'exemple.
+A FAIRE APRES LE 8 SEPTEMBRE
+  Remplacer les lettres de bulletin (page Voter, point 7).
   Reecrire la section Alliances : les listes seront definitives.
 
 RESTE A FAIRE
