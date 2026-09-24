@@ -1,21 +1,27 @@
-GUIDE ELECTIONS ISRAEL 2026
+GUIDE ELECTIONS ISRAEL 2026 - MISE A JOUR DU 24 SEPTEMBRE 2026
 
 ENVOI SUR GITHUB
   github.com, depot election-israel-2026, branche main
-  Add file > Upload files > glisser index.html ET apercu.png
+  Add file > Upload files > glisser index.html (et A-LIRE.txt)
   Commit changes, puis attendre 5 minutes
+
+A SUPPRIMER SUR GITHUB (un envoi ne supprime rien)
+  Le vieux fichier elections-israel-2026-fr (1).html :
+  cliquer dessus > icone poubelle > Commit changes
 
 QUESTIONNAIRE : 28 QUESTIONS
   Chaque parti sort 1er a 100% quand on repond comme lui.
-  Les 28 questions discriminent (ecart d'au moins 3 points sur 4).
-  Amkha Israel (Winter) exclu : pas de programme publie.
-  HaTsionout HaDatit-Zehout : positions de Smotrich, questions
-  neutralisees la ou Feiglin defend l'inverse.
+  Bayit Tsioni remplace par Reservistes-Parti economique (Hendel-Zelekha),
+  positions de Hendel conservees (id "milouim").
+  Amkha Israel (Winter) exclu : positions trop peu detaillees.
+  HaTsionout HaDatit-Zehout : positions de Smotrich.
 
-A FAIRE APRES LE 8 SEPTEMBRE
-  Remplacer les lettres de bulletin (page Voter, point 7).
-  Reecrire la section Alliances.
+A FAIRE ENSUITE
+  27 sept : verifier la table officielle des lettres (asterisques page Voter,
+            champ lettresOk dans les donnees des partis).
+  Au plus tard 4 oct : decision de la Cour supreme sur Raam et la Liste commune.
+  16 oct : accords de restes definitifs (page Alliances).
+  23 oct au soir : plus aucun nouveau sondage (silence legal).
 
 RESTE A FAIRE
   Settings > Pages > cocher Enforce HTTPS
-  Supprimer le vieux fichier elections-israel-2026-fr (1).html
